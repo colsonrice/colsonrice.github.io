@@ -1,129 +1,246 @@
 /* ---------------------------
-   Base & Global Styles
+   RESET & BASE
 ---------------------------- */
-
-html, body {
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;  /* Or your preferred font */
-  background: #fafafa;
-  color: #333;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
   line-height: 1.6;
 }
 
-/* A wrapper to center content and set max width */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* Headings */
-h1, h2, h3 {
-  font-weight: normal;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Paragraphs */
-p {
-  margin-bottom: 1rem;
-}
-
-/* Links */
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* Lists (if you're using UL for navigation or app links) */
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-li {
-  margin-bottom: 0.5rem;
-}
-
 /* ---------------------------
-   Header & Navigation
+   HEADERS & NAV
 ---------------------------- */
-
-/* If you add a <header> tag at the top of each page */
 header {
-  background: #333;
+  background: linear-gradient(135deg, #3a7bd5, #3a6073);
+  padding: 2rem 1rem;
+  text-align: center;
   color: #fff;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Simple nav style if you want horizontal links */
+header::after {
+  /* Subtle angled overlay effect */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  transform: skewY(-5deg);
+  transform-origin: left bottom;
+  pointer-events: none;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin: 0.5rem auto 0 auto;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+/* Optional nav bar near the top if needed */
+nav {
+  margin-top: 1.5rem;
+}
 nav ul {
-  display: flex;
-  gap: 1rem;
+  list-style: none;
+  display: inline-flex;
+  gap: 1.5rem;
 }
 nav li {
   margin: 0;
 }
 nav a {
   color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 nav a:hover {
+  color: #ffe;
+}
+
+/* ---------------------------
+   CONTAINER
+---------------------------- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ---------------------------
+   TYPOGRAPHY
+---------------------------- */
+h1, h2, h3, h4 {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #3a7bd5;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: #3a7bd5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2a6bc5;
   text-decoration: underline;
 }
 
 /* ---------------------------
-   Footer
+   SECTIONS & CARDS
 ---------------------------- */
+section {
+  margin-bottom: 3rem;
+}
 
-/* If you add a <footer> at the bottom */
-footer {
-  background: #eee;
-  padding: 1rem;
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
+/* Example "cards" for sub-splash pages or app listings */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
   color: #666;
 }
 
-/* ---------------------------
-   Utility Classes (Optional)
----------------------------- */
+/* Button-like links inside cards */
+.card a.btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  background: #3a7bd5;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+.card a.btn:hover {
+  background: #2a6bc5;
+}
 
-/* Center text alignment */
+/* ---------------------------
+   FOOTER
+---------------------------- */
+footer {
+  background: #333;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------
+   UTILITY CLASSES
+---------------------------- */
+/* Center text */
 .text-center {
   text-align: center;
 }
 
-/* Spacing helpers (optional) */
+/* Spacing helpers */
 .mt-2 {
   margin-top: 2rem;
 }
 .mb-2 {
   margin-bottom: 2rem;
 }
-
-/* Button styles (if needed) */
-button {
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 4px;
+.mt-3 {
+  margin-top: 3rem;
 }
-button:hover {
-  background: #0056b3;
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+/* Hidden (for any elements you want to visually hide) */
+.hidden {
+  display: none !important;
+}
+
+/* ---------------------------
+   RESPONSIVE DESIGN
+---------------------------- */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    padding: 1rem;
+  }
 }
