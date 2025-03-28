@@ -145,34 +145,42 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
+  /* Optional: force grid cells to be equal height */
+  grid-auto-rows: 1fr;
 }
 
 .card {
   background: #fff;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;  /* ensures a consistent minimum height */
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
 }
+
 .card p {
   margin-bottom: 1rem;
   color: #666;
+  /* Allow paragraphs to take up available space */
+  flex-grow: 1;
 }
 
-/* Button-like links inside cards */
+/* Button-like links inside cards; margin-top: auto pushes them to the bottom */
 .card a.btn {
   display: inline-block;
-  margin-top: 0.5rem;
+  margin-top: auto;
   padding: 0.6rem 1rem;
   border-radius: 4px;
   background: #3a7bd5;
@@ -181,9 +189,11 @@ a:hover {
   font-weight: 500;
   transition: background 0.3s ease;
 }
+
 .card a.btn:hover {
   background: #2a6bc5;
 }
+
 
 /* ---------------------------
    FOOTER
