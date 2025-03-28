@@ -1,11 +1,129 @@
-body {
-  font-family: sans-serif;
-  margin: 20px;
+/* ---------------------------
+   Base & Global Styles
+---------------------------- */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;  /* Or your preferred font */
+  background: #fafafa;
+  color: #333;
 }
 
-h1 {
-  margin-bottom: 10px;
+body {
+  line-height: 1.6;
 }
-p, li {
-  line-height: 1.5;
+
+/* A wrapper to center content and set max width */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: normal;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lists (if you're using UL for navigation or app links) */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------------------------
+   Header & Navigation
+---------------------------- */
+
+/* If you add a <header> tag at the top of each page */
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Simple nav style if you want horizontal links */
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+nav li {
+  margin: 0;
+}
+nav a {
+  color: #fff;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------
+   Footer
+---------------------------- */
+
+/* If you add a <footer> at the bottom */
+footer {
+  background: #eee;
+  padding: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ---------------------------
+   Utility Classes (Optional)
+---------------------------- */
+
+/* Center text alignment */
+.text-center {
+  text-align: center;
+}
+
+/* Spacing helpers (optional) */
+.mt-2 {
+  margin-top: 2rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+/* Button styles (if needed) */
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+button:hover {
+  background: #0056b3;
 }
