@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CopyClipper | Colson's App Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>SquatchCraft Apps</h1>
+    <p>Explore a suite of thoughtfully crafted applications that inspire creativity, productivity, and innovation.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="everydaygrace.html">Everyday Grace</a></li>
+        <li><a href="ldsjournal.html">LDS Journal</a></li>
+        <li><a href="powerplayai.html">Power Play AI</a></li>
+        <li><a href="copyclipper.html">CopyClipper</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="container">
+    <section>
+      <h2>CopyClipper</h2>
+      <p><strong>CopyClipper</strong> is a macOS utility that makes it effortless to prepare entire codebases for AI assistants. Select a local folder or GitHub repository, filter by file types, and copy your project into one clean, labeled bundle — ready to paste into your favorite LLM for debugging, refactoring, or feature development.</p>
+      
+      <h3>Key Features</h3>
+      <ul>
+        <li>Copy from local folders you grant access to, or from GitHub repositories.</li>
+        <li>Filter by file extension (Swift, JS, JSON, and more).</li>
+        <li>Preserve file structure with clear begin/end markers for each file.</li>
+        <li>Save favorites with permissions for one-click reuse.</li>
+        <li>One-click copy to clipboard — no accounts, no setup.</li>
+      </ul>
+      
+      <p>CopyClipper does not collect personal data and works fully offline when copying local folders. Not affiliated with GitHub or any AI provider.</p>
+      
+      <p>If you have any questions or need support, please contact us at <a href="mailto:hello@squatchcraft.com">hello@squatchcraft.com</a>.</p>
+      <p><a href="copyclipper-privacy.html" class="btn">View Privacy Policy</a></p>
+      <p><a href="index.html">← Back to All Apps</a></p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Colson - All Rights Reserved</p>
+    <p>Crafted with passion and precision.</p>
+  </footer>
+</body>
+</html>
