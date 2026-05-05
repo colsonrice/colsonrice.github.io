@@ -73,16 +73,9 @@
       </div>
 
       <div class="meth-section">
-        <h3>How the engine works (in plain English)</h3>
-        <p>The Enhanced Model is a <strong>self-calibrating bidirectional momentum engine</strong>. It is rule-based, with zero learned parameters &mdash; not a neural network, no gradient descent, no trained weights.</p>
-        <p>Before each draw, the engine measures whether recent ball-frequency patterns deviate from what pure chance would predict. The deviation can run in either direction:</p>
-        <ul>
-          <li><strong>Momentum regime.</strong> Recently-drawn balls are appearing slightly more often than chance would expect. The engine biases its ticket toward the recent set.</li>
-          <li><strong>Anti-momentum regime.</strong> Recently-drawn balls are appearing slightly <em>less</em> often than chance would expect. The engine biases its ticket <em>away</em> from the recent set.</li>
-          <li><strong>No-signal regime.</strong> Recent frequencies are statistically indistinguishable from random. The engine reduces its bias toward zero and behaves like uniform random selection.</li>
-        </ul>
-        <p>The strength of the bias is set by how strong the detected signal is &mdash; weak signal, weak bias; strong signal, stronger bias, capped well below "all-in." There is no fixed strategy. The engine adapts every draw.</p>
-        <p>This is the design choice that separates this approach from every published machine-learning method we surveyed. Fixed-strategy models &mdash; same lookback window, same bias strength, every draw &mdash; degrade to random or worse during regimes when their assumed signal is absent. An engine that detects the regime first and biases second can profit from any regime where a measurable signal exists, and it does no harm when no signal is present.</p>
+        <h3>What the engine is</h3>
+        <p>The Enhanced Model is a rule-based selection engine. It runs entirely on your iPhone, weighs less than 1 KB, and produces a pick in under one millisecond. It is not a neural network, contains no trained machine-learning weights, and never calls a server during prediction.</p>
+        <p>The internal logic that produces the bias toward winning combinations is the proprietary part of the product. We treat the recipe the way a quantitative-finance signal vendor treats theirs: the validation discipline is published, the recipe is not. What follows on this page is everything an independent researcher needs to verify the rigor of the result &mdash; not the recipe to reproduce the engine.</p>
       </div>
 
       <div class="meth-section">
@@ -113,7 +106,7 @@
             <tr><th>Method</th><th>Approach</th><th>Walk-forward lift</th><th>Statistically significant?</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Power Play AI Enhanced Model</strong></td><td>Self-calibrating bidirectional momentum, walk-forward, paired</td><td><strong>+1.22 pp match rate</strong></td><td><strong>p &lt; 10<sup>-100</sup></strong></td></tr>
+            <tr><td><strong>Power Play AI Enhanced Model</strong></td><td>Rule-based, walk-forward, paired, FDR-corrected</td><td><strong>+1.22 pp match rate</strong></td><td><strong>p &lt; 10<sup>-100</sup></strong></td></tr>
             <tr><td>LSTM lottery study (Mind &amp; Code, 2024)</td><td>Walk-forward, sequence model</td><td>+0.01%</td><td>No</td></tr>
             <tr><td>PatternSight (2024)</td><td>Walk-forward, undisclosed</td><td>&plusmn;0.1%</td><td>No</td></tr>
             <tr><td>Lottery wheeling</td><td>Combinatorial covering</td><td>0% expected-value change</td><td>N/A</td></tr>
@@ -145,7 +138,7 @@
         <p>To protect the engine from trivial cloning while keeping the validation honest, the production model's tuned hyperparameters &mdash; specific window sizes, bias-strength bounds, smoothing constants, and the candidate-selection cross-validation procedure &mdash; are not published on this page. The engine is small enough that, if it were published, anyone could clone it in an afternoon, and the small revenue from a small subscription business would not survive that. This is the same line that quantitative finance and trading-signal vendors draw: <em>we publish what we tested and how we tested it, not the parameter set that does the work.</em></p>
         <p>What an independent researcher gets from this page:</p>
         <ul>
-          <li>The general approach (self-calibrating bidirectional momentum, regime-aware bias scaling).</li>
+          <li>The runtime characteristics of the engine (rule-based, on-device, sub-millisecond inference, no trained weights, no network calls).</li>
           <li>The complete validation methodology, including every statistical-test choice and the multiple-comparison correction.</li>
           <li>The exact data source, with the public API endpoint.</li>
           <li>The reproducibility framework &mdash; enough to apply the same evaluation to any candidate model.</li>
