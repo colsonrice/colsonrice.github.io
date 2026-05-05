@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Power Play AI - Methodology | SquatchCraft Apps</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .meth-section {
+      border-top: 1px solid rgba(127,127,127,0.18);
+      padding-top: 20px;
+      margin-top: 28px;
+    }
+    .meth-section:first-of-type { border-top: none; padding-top: 0; }
+    .lit-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 8px;
+      font-size: 0.95em;
+    }
+    .lit-table th, .lit-table td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(127,127,127,0.18);
+    }
+    .lit-table th {
+      font-weight: 600;
+      opacity: 0.85;
+    }
+    .lit-table td.num { font-variant-numeric: tabular-nums; }
+    .small-note {
+      font-size: 0.88em;
+      opacity: 0.65;
+      margin-top: 10px;
+    }
+    .callout {
+      background: rgba(217,140,0,0.06);
+      border: 1px solid rgba(217,140,0,0.22);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin: 22px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SquatchCraft Apps</h1>
+    <p>Explore a suite of thoughtfully crafted applications that inspire creativity, productivity, and spiritual growth.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="everydaygrace.html">Everyday Grace</a></li>
+        <li><a href="https://www.greatdestinationvacations.com">Great Destinations Vacations</a></li>
+        <li><a href="powerplayai.html">Power Play AI</a></li>
+        <li><a href="copyclipper.html">CopyClipper</a></li>
+        <li><a href="quantumbob.html">QuantumBob</a></li>
+        <li><a href="syncboy.html">SyncBoy</a></li>
+        <li><a href="tanklab.html">TankLab</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Power Play AI &mdash; Enhanced Model Methodology</h2>
+      <p><em>Last updated May 2026</em></p>
+
+      <p>This page describes how the Enhanced Model selects numbers, how we validated it, and how an independent researcher could check our claims for themselves. The exact tuned parameters of the production engine are not published &mdash; that's the line between "show your homework" and "publish a copy-paste recipe." Everything that supports the credibility of the result is on this page.</p>
+
+      <div class="callout">
+        <strong>Headline result.</strong> In 10,000 walk-forward trials on real Powerball draws, the Enhanced Model picked numbers that matched winning balls at a higher rate than uniform random selection in 56.95% of head-to-head comparisons (binomial <em>p</em> = 6.28 &times; 10<sup>-72</sup>; Wilcoxon <em>p</em> = 8.88 &times; 10<sup>-104</sup>; Cohen's <em>d</em> = 0.227; all bootstrap 95% CIs exclude zero; all four primary tests survive Benjamini-Hochberg FDR correction). Full numbers and the machine-readable artifact are linked from the <a href="powerplayai-proof.html">proof page</a>.
+      </div>
+
+      <div class="meth-section">
+        <h3>How the engine works (in plain English)</h3>
+        <p>The Enhanced Model is a <strong>self-calibrating bidirectional momentum engine</strong>. It is rule-based, with zero learned parameters &mdash; not a neural network, no gradient descent, no trained weights.</p>
+        <p>Before each draw, the engine measures whether recent ball-frequency patterns deviate from what pure chance would predict. The deviation can run in either direction:</p>
+        <ul>
+          <li><strong>Momentum regime.</strong> Recently-drawn balls are appearing slightly more often than chance would expect. The engine biases its ticket toward the recent set.</li>
+          <li><strong>Anti-momentum regime.</strong> Recently-drawn balls are appearing slightly <em>less</em> often than chance would expect. The engine biases its ticket <em>away</em> from the recent set.</li>
+          <li><strong>No-signal regime.</strong> Recent frequencies are statistically indistinguishable from random. The engine reduces its bias toward zero and behaves like uniform random selection.</li>
+        </ul>
+        <p>The strength of the bias is set by how strong the detected signal is &mdash; weak signal, weak bias; strong signal, stronger bias, capped well below "all-in." There is no fixed strategy. The engine adapts every draw.</p>
+        <p>This is the design choice that separates this approach from every published machine-learning method we surveyed. Fixed-strategy models &mdash; same lookback window, same bias strength, every draw &mdash; degrade to random or worse during regimes when their assumed signal is absent. An engine that detects the regime first and biases second can profit from any regime where a measurable signal exists, and it does no harm when no signal is present.</p>
+      </div>
+
+      <div class="meth-section">
+        <h3>How we validated it</h3>
+        <p>We applied evaluation discipline borrowed from clinical-trial and quantitative-finance practice. Every choice below was made to remove the standard ways lottery-prediction studies fool themselves:</p>
+
+        <h4>Walk-forward backtesting</h4>
+        <p>For each evaluation draw at index <em>t</em>, the model received only <code>draws[0:t]</code> as input &mdash; every draw before the target, and nothing after. There is no path by which future information could leak into a prediction. Walk-forward is the standard for honest evaluation in finance and machine learning, and most published lottery-prediction studies that look impressive in research papers fail outright when they're forced to play by these rules.</p>
+
+        <h4>Paired comparison against uniform random</h4>
+        <p>For every trial, the model and a uniform-random baseline received identical target draws and identical RNG seeds. The two sides differed in <em>only</em> their selection logic. All statistical tests are paired &mdash; we compare the model and the baseline on the exact same draws, never on parallel-universe samples.</p>
+
+        <h4>Seed-level aggregation (most conservative)</h4>
+        <p>The statistical unit is one seed's average match rate across all evaluation draws. With 10,000 seeds, that's <em>N</em> = 10,000 paired observations. We did not treat each individual draw as an independent observation, which would have inflated significance dramatically. Seed-level is the most conservative inference choice.</p>
+
+        <h4>Multiple-comparison correction</h4>
+        <p>Four primary statistical tests were run (head-to-head wins, match-rate difference, 3+-match-rate difference, cumulative extra matches). Every result was corrected for multiple comparisons using the Benjamini-Hochberg false-discovery-rate procedure. All four tests survive correction. All four bootstrap 95% confidence intervals (10,000 resamples) exclude zero.</p>
+
+        <h4>Pre-registered model, single comparison</h4>
+        <p>The production engine's configuration was selected on a development split, frozen, and then evaluated on the held-out test period. There was no parameter-fishing on the test set. One pre-registered model versus one baseline; no multiple-model selection bias to correct for.</p>
+      </div>
+
+      <div class="meth-section">
+        <h3>Literature comparison</h3>
+        <p>Among the published lottery-prediction methods we surveyed, none has produced a statistically significant walk-forward lift on a major lottery game when evaluated under the discipline above. Most produced results within &plusmn;0.1% of random chance.</p>
+        <table class="lit-table">
+          <thead>
+            <tr><th>Method</th><th>Approach</th><th>Walk-forward lift</th><th>Statistically significant?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Power Play AI Enhanced Model</strong></td><td>Self-calibrating bidirectional momentum, walk-forward, paired</td><td><strong>+1.22 pp match rate</strong></td><td><strong>p &lt; 10<sup>-100</sup></strong></td></tr>
+            <tr><td>LSTM lottery study (Mind &amp; Code, 2024)</td><td>Walk-forward, sequence model</td><td>+0.01%</td><td>No</td></tr>
+            <tr><td>PatternSight (2024)</td><td>Walk-forward, undisclosed</td><td>&plusmn;0.1%</td><td>No</td></tr>
+            <tr><td>Lottery wheeling</td><td>Combinatorial covering</td><td>0% expected-value change</td><td>N/A</td></tr>
+            <tr><td>Commercial AI lottery tools</td><td>Various, unverified</td><td>Unaudited claims</td><td>No peer review</td></tr>
+          </tbody>
+        </table>
+        <p class="small-note">"We surveyed" is load-bearing &mdash; we don't claim to have reviewed every lottery study ever conducted. We claim that, among the systems with publicly available methodology that we examined, none has produced a comparable result under proper walk-forward evaluation.</p>
+      </div>
+
+      <div class="meth-section">
+        <h3>Reproducibility</h3>
+        <p>The validation methodology is fully reproducible. An independent researcher building any candidate lottery-prediction system can apply the same evaluation framework to test it:</p>
+        <ol>
+          <li>Fetch Powerball draws from the public NY Open Data API: <code>https://data.ny.gov/resource/d6yy-54nr.json</code>. Pagination is standard Socrata; filter to current rules (main balls 1&ndash;69, Powerball 1&ndash;26).</li>
+          <li>Implement a uniform random baseline: 5 main balls without replacement from 1&ndash;69, 1 ball from 1&ndash;26.</li>
+          <li>Implement and freeze your candidate model on a development split.</li>
+          <li>For each evaluation draw, give the candidate only the prior draws (no future leakage).</li>
+          <li>For each of <em>N</em> seeds, generate paired (candidate, baseline) tickets using the same RNG seed; score main-ball matches per ticket.</li>
+          <li>Run the headline statistical tests on the paired seed-level averages: a binomial test on head-to-head wins, a Wilcoxon signed-rank test on match-rate differences, and a paired <em>t</em>-test. Compute bootstrap 95% confidence intervals.</li>
+          <li>Apply Benjamini-Hochberg FDR correction across all primary tests.</li>
+          <li>Check whether your CIs exclude zero and your corrected <em>p</em>-values cross your significance threshold.</li>
+        </ol>
+        <p>Anyone can verify the discipline. The result we report is what survives that discipline.</p>
+        <p>The full machine-readable evaluation artifact for the Enhanced Model is published at <a href="proof/validation_proof.json">proof/validation_proof.json</a>.</p>
+      </div>
+
+      <div class="meth-section">
+        <h3>What is and isn't published</h3>
+        <p>To protect the engine from trivial cloning while keeping the validation honest, the production model's tuned hyperparameters &mdash; specific window sizes, bias-strength bounds, smoothing constants, and the candidate-selection cross-validation procedure &mdash; are not published on this page. The engine is small enough that, if it were published, anyone could clone it in an afternoon, and the small revenue from a small subscription business would not survive that. This is the same line that quantitative finance and trading-signal vendors draw: <em>we publish what we tested and how we tested it, not the parameter set that does the work.</em></p>
+        <p>What an independent researcher gets from this page:</p>
+        <ul>
+          <li>The general approach (self-calibrating bidirectional momentum, regime-aware bias scaling).</li>
+          <li>The complete validation methodology, including every statistical-test choice and the multiple-comparison correction.</li>
+          <li>The exact data source, with the public API endpoint.</li>
+          <li>The reproducibility framework &mdash; enough to apply the same evaluation to any candidate model.</li>
+          <li>The machine-readable result artifact for the production engine.</li>
+        </ul>
+        <p>That is sufficient to verify the rigor of the result without giving away the parameter recipe.</p>
+      </div>
+
+      <p style="margin-top:36px;"><a href="powerplayai-proof.html">&larr; Back to the proof</a> &middot; <a href="powerplayai.html">Back to Power Play AI</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 SquatchCraft LLC - All Rights Reserved</p>
+    <p>Crafted with passion and purpose.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
