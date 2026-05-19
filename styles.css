@@ -42,7 +42,7 @@ body[data-app="powerplayai"]  { --accent:#ffd166; --accent-2:#ef476f; --accent-3
 body[data-app="quantumbob"]   { --accent:#b388ff; --accent-2:#7c4dff; --accent-3:#22d3ee; --accent-soft:rgba(179,136,255,0.12); --accent-glow:rgba(179,136,255,0.45); }
 body[data-app="everydaygrace"]{ --accent:#f5c062; --accent-2:#f97a64; --accent-3:#a78bfa; --accent-soft:rgba(245,192,98,0.12); --accent-glow:rgba(245,192,98,0.45); }
 body[data-app="humbly"]       { --accent:#cbb18a; --accent-2:#86b4a1; --accent-3:#d4a373; --accent-soft:rgba(203,177,138,0.12); --accent-glow:rgba(203,177,138,0.45); }
-body[data-app="syncboy"]      { --accent:#9bea3f; --accent-2:#22c55e; --accent-3:#84cc16; --accent-soft:rgba(155,234,63,0.12); --accent-glow:rgba(155,234,63,0.45); }
+body[data-app="phosphor"]     { --accent:#22ee88; --accent-2:#4ade80; --accent-3:#a3e635; --accent-soft:rgba(34,238,136,0.12); --accent-glow:rgba(34,238,136,0.55); }
 body[data-app="copyclipper"]  { --accent:#60a5fa; --accent-2:#22d3ee; --accent-3:#a78bfa; --accent-soft:rgba(96,165,250,0.12); --accent-glow:rgba(96,165,250,0.45); }
 body[data-app="greatdestinations"]{ --accent:#fb923c; --accent-2:#f43f5e; --accent-3:#fbbf24; --accent-soft:rgba(251,146,60,0.12); --accent-glow:rgba(251,146,60,0.45); }
 
@@ -396,6 +396,35 @@ section { padding: clamp(64px, 9vw, 130px) 0; }
 /* Per-featured-card accent override */
 .featured-card[data-accent] { --card-accent-soft: var(--accent-soft); }
 
+/* Flagship variant, more emphatic glow + sheen */
+.featured-card.flagship {
+  min-height: 540px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-color: var(--border-hi);
+  box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7);
+}
+.featured-card.flagship::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.6;
+  pointer-events: none;
+}
+.featured-card.flagship .meta-text .name { font-size: 1.55rem; }
+.featured-card.flagship .device-mount img {
+  width: clamp(220px, 30vw, 280px);
+  box-shadow:
+    0 0 0 6px rgba(20, 20, 28, 0.95),
+    0 0 0 7px rgba(255, 255, 255, 0.12),
+    0 40px 80px -10px rgba(0, 0, 0, 0.8),
+    0 0 120px var(--accent-glow);
+}
+.featured-card.flagship:hover {
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.7), 0 0 80px var(--accent-glow);
+}
+
 /* ─── App grid (smaller cards) ─── */
 .app-grid {
   display: grid;
@@ -469,15 +498,21 @@ section { padding: clamp(64px, 9vw, 130px) 0; }
 .app-card .arrow::after { content: '→'; transition: transform 0.25s var(--ease); }
 .app-card:hover .arrow::after { transform: translateX(4px); }
 
-/* Per-card accent, set via inline style or data-accent */
-.app-card[data-accent="tanklab"]      { --accent:#3ad6ff; --accent-2:#22e7c2; --accent-soft:rgba(58,214,255,0.12); --accent-glow:rgba(58,214,255,0.45); }
-.app-card[data-accent="powerplayai"]  { --accent:#ffd166; --accent-2:#ef476f; --accent-soft:rgba(255,209,102,0.12); --accent-glow:rgba(255,209,102,0.45); }
-.app-card[data-accent="quantumbob"]   { --accent:#b388ff; --accent-2:#7c4dff; --accent-soft:rgba(179,136,255,0.12); --accent-glow:rgba(179,136,255,0.45); }
-.app-card[data-accent="everydaygrace"]{ --accent:#f5c062; --accent-2:#f97a64; --accent-soft:rgba(245,192,98,0.12); --accent-glow:rgba(245,192,98,0.45); }
-.app-card[data-accent="humbly"]       { --accent:#cbb18a; --accent-2:#86b4a1; --accent-soft:rgba(203,177,138,0.12); --accent-glow:rgba(203,177,138,0.45); }
-.app-card[data-accent="syncboy"]      { --accent:#9bea3f; --accent-2:#22c55e; --accent-soft:rgba(155,234,63,0.12); --accent-glow:rgba(155,234,63,0.45); }
-.app-card[data-accent="copyclipper"]  { --accent:#60a5fa; --accent-2:#22d3ee; --accent-soft:rgba(96,165,250,0.12); --accent-glow:rgba(96,165,250,0.45); }
-.app-card[data-accent="greatdestinations"]{ --accent:#fb923c; --accent-2:#f43f5e; --accent-soft:rgba(251,146,60,0.12); --accent-glow:rgba(251,146,60,0.45); }
+/* Per-accent variables, applied to any element with data-accent="..." */
+[data-accent="tanklab"]      { --accent:#3ad6ff; --accent-2:#22e7c2; --accent-soft:rgba(58,214,255,0.12); --accent-glow:rgba(58,214,255,0.45); }
+[data-accent="powerplayai"]  { --accent:#ffd166; --accent-2:#ef476f; --accent-soft:rgba(255,209,102,0.12); --accent-glow:rgba(255,209,102,0.45); }
+[data-accent="quantumbob"]   { --accent:#b388ff; --accent-2:#7c4dff; --accent-soft:rgba(179,136,255,0.12); --accent-glow:rgba(179,136,255,0.45); }
+[data-accent="everydaygrace"]{ --accent:#f5c062; --accent-2:#f97a64; --accent-soft:rgba(245,192,98,0.12); --accent-glow:rgba(245,192,98,0.45); }
+[data-accent="humbly"]       { --accent:#cbb18a; --accent-2:#86b4a1; --accent-soft:rgba(203,177,138,0.12); --accent-glow:rgba(203,177,138,0.45); }
+[data-accent="phosphor"]     { --accent:#22ee88; --accent-2:#4ade80; --accent-soft:rgba(34,238,136,0.12); --accent-glow:rgba(34,238,136,0.55); }
+[data-accent="copyclipper"]  { --accent:#60a5fa; --accent-2:#22d3ee; --accent-soft:rgba(96,165,250,0.12); --accent-glow:rgba(96,165,250,0.45); }
+[data-accent="greatdestinations"]{ --accent:#fb923c; --accent-2:#f43f5e; --accent-soft:rgba(251,146,60,0.12); --accent-glow:rgba(251,146,60,0.45); }
+[data-accent="sudsaway"]     { --accent:#ff8a3d; --accent-2:#1e3a8a; --accent-glow:rgba(255,138,61,0.35); }
+
+/* Make text inside accented featured cards stay light, not accent-colored */
+.featured-card { color: var(--text); }
+.featured-card .headline, .featured-card .meta-text .name { color: var(--text); }
+.featured-card .desc, .featured-card .meta-text .tag { color: var(--text-mute); }
 
 /* ─── Web work grid ─── */
 .web-grid {
