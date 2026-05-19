@@ -1,87 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <title>Welcome</title>
-  <!-- Link to your CSS file -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SquatchCraft — Apps crafted for curious humans</title>
+  <meta name="description" content="A small studio of indie iOS apps from SquatchCraft LLC. AI for everyday questions, aquariums, lotteries, quantum physics, faith, and the work in between.">
+  <meta property="og:title" content="SquatchCraft — Apps crafted for curious humans">
+  <meta property="og:description" content="A small studio of indie iOS apps. AI for everyday questions, aquariums, lotteries, quantum physics, faith, and the work in between.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icons/tanklab.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-app="default">
 
-  <header>
-    <h1>SquatchCraft Apps</h1>
-    <p>Explore a suite of thoughtfully crafted applications that inspire creativity, productivity, and spiritual growth.</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="everydaygrace.html">Everyday Grace</a></li>
-        <li><a href="https://www.greatdestinationvacations.com">Great Destinations Vactations</a></li>
-        <li><a href="powerplayai.html">Power Play AI</a></li>
-        <li><a href="copyclipper.html">CopyClipper</a></li>
-        <li><a href="quantumbob.html">QuantumBob</a></li>
-        <li><a href="syncboy.html">SyncBoy</a></li>
-        <li><a href="bidsnap.html">BidSnap</a></li>
-        <li><a href="tanklab.html">TankLab</a></li>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
+      <ul class="nav-links">
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="https://apps.apple.com/us/developer/squatchcraft-llc/id1440325922" class="nav-cta" target="_blank" rel="noopener">App Store</a></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
-    </nav>
-  </header>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+    </div>
+  </nav>
 
-  <!-- Main content area -->
-  <main class="container">
-    <section>
-      <h2>Featured Apps</h2>
-      <p class="subtitle">From personal reflection to AI-driven productivity, these apps are designed with your needs in mind.</p>
+  <main>
+    <section class="hero shell">
+      <span class="eyebrow reveal">SquatchCraft LLC · Indie iOS studio</span>
+      <h1 class="reveal" style="margin-top:24px;">
+        Apps crafted for <span class="serif gradient-text">curious humans</span>.
+      </h1>
+      <p class="lede reveal">
+        A small studio building thoughtful, focused iOS apps — from AI lottery picks and aquarium science
+        to quantum physics games and quiet daily devotionals. One developer. Made on purpose.
+      </p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary btn-arrow" href="#apps">Browse the apps</a>
+        <a class="btn btn-ghost" href="#studio">About the studio</a>
+      </div>
+    </section>
 
-      <div class="cards mt-2">
-        <div class="card">
-          <h3>Everyday Grace</h3>
-          <p>Foster daily reflection, gratitude, and positivity with simple journaling, uplifting prompts, and customized devotionals.</p>
-          <a class="btn" href="everydaygrace.html">Learn More</a>
+    <section id="featured" class="shell" style="padding-top:0;">
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <span class="eyebrow">Featured</span>
+          <h2>The latest from the bench.</h2>
+          <p>Two apps that show what we love most about the work — using powerful tech to make small, careful tools.</p>
         </div>
-        <div class="card">
-          <h3>Great Destinations Vacations</h3>
-          <p>A website built for a botique vacation rentals company.</p>
-          <a class="btn" href="https://www.greatdestinationvacations.com">Learn More</a>
+      </div>
+
+      <div class="featured">
+        <a class="featured-card reveal" data-accent="tanklab" style="--card-accent-soft: rgba(58,214,255,0.18);" href="tanklab.html">
+          <div class="meta">
+            <div class="icon-tile"><img src="assets/icons/tanklab.png" alt="TankLab icon" loading="lazy"></div>
+            <div class="meta-text">
+              <div class="name">TankLab</div>
+              <div class="tag">Aquarium science, simplified</div>
+            </div>
+          </div>
+          <h3 class="headline">AI that actually understands your tank.</h3>
+          <p class="desc">Scan test strips, log parameters, schedule maintenance, and ask a model that knows your stocking list and water history.</p>
+          <div class="device-mount">
+            <img src="assets/screenshots/tanklab/1.png" alt="TankLab screenshot" loading="lazy">
+          </div>
+        </a>
+
+        <a class="featured-card reveal" data-accent="bidsnap" style="--card-accent-soft: rgba(52,211,153,0.18);" href="bidsnap.html">
+          <div class="meta">
+            <div class="icon-tile"><img src="assets/icons/bidsnap.png" alt="BidSnap icon" loading="lazy"></div>
+            <div class="meta-text">
+              <div class="name">BidSnap</div>
+              <div class="tag">Quotes & invoices from the truck</div>
+            </div>
+          </div>
+          <h3 class="headline">A CRM built for the driveway, not the desk.</h3>
+          <p class="desc">Estimate to invoice to paid — in 60 seconds, from your phone. Made for solo operators in lawn care, power washing, and the trades.</p>
+          <div class="device-mount">
+            <img src="assets/screenshots/bidsnap/1.png" alt="BidSnap screenshot" loading="lazy">
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="apps" class="shell">
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <span class="eyebrow">All apps</span>
+          <h2>Seven apps, one workbench.</h2>
+          <p>Grouped by what they help you do.</p>
         </div>
-        <div class="card">
-          <h3>Power Play AI</h3>
-          <p>Boost your lottery picks with AI-driven statistical analysis.</p>
-          <a class="btn" href="powerplayai.html">Learn More</a>
+        <a class="link" href="https://apps.apple.com/us/developer/squatchcraft-llc/id1440325922" target="_blank" rel="noopener">View on App Store →</a>
+      </div>
+
+      <h3 style="margin-top:32px; margin-bottom:14px; font-size:.85rem; letter-spacing:.18em; text-transform:uppercase; color:var(--text-dim);">Productivity & Business</h3>
+      <div class="app-grid">
+        <a class="app-card reveal" data-accent="bidsnap" href="bidsnap.html">
+          <div class="top">
+            <div class="icon-tile"><img src="assets/icons/bidsnap.png" alt="" loading="lazy"></div>
+            <div><div class="name">BidSnap</div><div class="tag">CRM for service businesses</div></div>
+          </div>
+          <p class="desc">Estimates in 60 seconds, invoices, scheduling, and analytics. For solo crews in outdoor service trades.</p>
+          <span class="arrow">Learn more</span>
+        </a>
+        <a class="app-card reveal" data-accent="powerplayai" href="powerplayai.html">
+          <div class="top">
+            <div class="icon-tile"><img src="assets/icons/powerplayai.png" alt="" loading="lazy"></div>
+            <div><div class="name">PowerPlayAI</div><div class="tag">AI lotto picks &amp; ticket scanner</div></div>
+          </div>
+          <p class="desc">Smart, on-device number picks for Powerball, Mega Millions, and EuroMillions — with draw history analysis.</p>
+          <span class="arrow">Learn more</span>
+        </a>
+        <a class="app-card reveal" data-accent="copyclipper" href="copyclipper.html">
+          <div class="top">
+            <div class="icon-tile placeholder">CC</div>
+            <div><div class="name">CopyClipper</div><div class="tag">Snippet manager for the AI era</div></div>
+          </div>
+          <p class="desc">A clipboard built for sharing code with AI assistants — fast, structured, and out of your way.</p>
+          <span class="arrow">Learn more</span>
+        </a>
+      </div>
+
+      <h3 style="margin-top:48px; margin-bottom:14px; font-size:.85rem; letter-spacing:.18em; text-transform:uppercase; color:var(--text-dim);">Lifestyle &amp; Faith</h3>
+      <div class="app-grid">
+        <a class="app-card reveal" data-accent="tanklab" href="tanklab.html">
+          <div class="top">
+            <div class="icon-tile"><img src="assets/icons/tanklab.png" alt="" loading="lazy"></div>
+            <div><div class="name">TankLab</div><div class="tag">Aquarium management</div></div>
+          </div>
+          <p class="desc">Water parameter logging, AI test strip scanner, livestock manager, and a chatbot that knows your tank.</p>
+          <span class="arrow">Learn more</span>
+        </a>
+        <a class="app-card reveal" data-accent="everydaygrace" href="everydaygrace.html">
+          <div class="top">
+            <div class="icon-tile"><img src="assets/icons/everydaygrace.png" alt="" loading="lazy"></div>
+            <div><div class="name">Everyday Grace</div><div class="tag">Daily journaling &amp; devotionals</div></div>
+          </div>
+          <p class="desc">A faith-friendly daily practice: prompts, devotionals, gratitude lists, and a quiet space to write.</p>
+          <span class="arrow">Learn more</span>
+        </a>
+        <a class="app-card reveal" data-accent="humbly" href="humbly.html">
+          <div class="top">
+            <div class="icon-tile"><img src="assets/icons/humbly.png" alt="" loading="lazy"></div>
+            <div><div class="name">Humbly</div><div class="tag">Bible study, slowed down</div></div>
+          </div>
+          <p class="desc">Original-language Bible study, sermon notes, and a distraction-free space to sit with Scripture.</p>
+          <span class="arrow">Learn more</span>
+        </a>
+      </div>
+
+      <h3 style="margin-top:48px; margin-bottom:14px; font-size:.85rem; letter-spacing:.18em; text-transform:uppercase; color:var(--text-dim);">Games &amp; Curiosity</h3>
+      <div class="app-grid">
+        <a class="app-card reveal" data-accent="quantumbob" href="quantumbob.html">
+          <div class="top">
+            <div class="icon-tile"><img src="assets/icons/quantumbob.png" alt="" loading="lazy"></div>
+            <div><div class="name">Quantum Bob</div><div class="tag">Real quantum-data game</div></div>
+          </div>
+          <p class="desc">Compete against an AI powered by IBM's quantum processor. Bell inequality, entanglement — playable.</p>
+          <span class="arrow">Learn more</span>
+        </a>
+        <a class="app-card reveal" data-accent="syncboy" href="syncboy.html">
+          <div class="top">
+            <div class="icon-tile placeholder">SB</div>
+            <div><div class="name">SyncBoy</div><div class="tag">GB / GBC / GBA on iPhone &amp; Watch</div></div>
+          </div>
+          <p class="desc">A classic handheld emulator with Apple Watch streaming, link-cable multiplayer, AI play, and Game Boy Camera.</p>
+          <span class="arrow">Learn more</span>
+        </a>
+      </div>
+
+      <h3 style="margin-top:48px; margin-bottom:14px; font-size:.85rem; letter-spacing:.18em; text-transform:uppercase; color:var(--text-dim);">On the Web</h3>
+      <div class="app-grid">
+        <a class="app-card reveal" data-accent="greatdestinations" href="https://www.greatdestinationvacations.com" target="_blank" rel="noopener">
+          <div class="top">
+            <div class="icon-tile placeholder">GD</div>
+            <div><div class="name">Great Destinations Vacations</div><div class="tag">Boutique vacation rentals</div></div>
+          </div>
+          <p class="desc">A website built for a boutique vacation rentals company — bookings, listings, and the lake-life vibe.</p>
+          <span class="arrow">Visit site</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="studio" class="shell">
+      <div class="about reveal">
+        <div>
+          <span class="eyebrow">The Studio</span>
+          <h2 style="margin-top:14px;">One workbench in <span class="serif gradient-text">Michigan</span>, a handful of apps that punch above their weight.</h2>
+          <p>SquatchCraft is a one-person iOS studio. Each app is shipped because it answers a real question — how do I keep my reef from crashing, how do I quote this driveway, how do I keep a daily prayer practice. Native iOS, privacy-first, on-device when it can be, and built to feel polished without feeling precious.</p>
+          <div style="margin-top:24px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-ghost" href="https://apps.apple.com/us/developer/squatchcraft-llc/id1440325922" target="_blank" rel="noopener">Apps by SquatchCraft on the App Store</a>
+          </div>
         </div>
-                <div class="card">
-          <h3>CopyClipper</h3>
-          <p>CopyClipper makes it effortless to share your code with AI assistants for debugging, refactoring, or feature development.</p>
-          <a class="btn" href="copyclipper.html">Learn More</a>
-        </div>
-        <div class="card">
-          <h3>QuantumBob</h3>
-          <p>Guess quantum measurement outcomes and compete against an AI powered by real entanglement data from IBM's quantum processor. Can you beat quantum physics?</p>
-          <a class="btn" href="quantumbob.html">Learn More</a>
-        </div>
-        <div class="card">
-          <h3>SyncBoy</h3>
-          <p>A Game Boy, Game Boy Color, and Game Boy Advance emulator for iPhone and Apple Watch with link cable multiplayer, AI play, and Game Boy Camera support.</p>
-          <a class="btn" href="syncboy.html">Learn More</a>
-        </div>
-        <div class="card">
-          <h3>BidSnap</h3>
-          <p>A CRM for power washing, lawn care, and outdoor service businesses. Create estimates in 60 seconds, send invoices, track jobs, and get paid from your iPhone.</p>
-          <a class="btn" href="bidsnap.html">Learn More</a>
-        </div>
-        <div class="card">
-          <h3>TankLab</h3>
-          <p>Your all-in-one aquarium management app. Track water parameters, scan test strips with AI, manage livestock, schedule maintenance, and get expert advice from an AI assistant that knows your tank.</p>
-          <a class="btn" href="tanklab.html">Learn More</a>
+        <div class="stat-grid">
+          <div class="stat"><div class="num">7</div><div class="lbl">Apps shipped</div></div>
+          <div class="stat"><div class="num">100%</div><div class="lbl">Native iOS</div></div>
+          <div class="stat"><div class="num">$0</div><div class="lbl">VC funding</div></div>
+          <div class="stat"><div class="num">∞</div><div class="lbl">Curiosity</div></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 SquatchCraft LLC - All Rights Reserved</p>
-    <p>Crafted with passion and purpose.</p>
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div>
+        <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
+        <p class="note">An indie iOS studio building careful tools for curious humans. Crafted with passion and purpose.</p>
+      </div>
+      <div>
+        <h4>Apps</h4>
+        <ul>
+          <li><a href="tanklab.html">TankLab</a></li>
+          <li><a href="bidsnap.html">BidSnap</a></li>
+          <li><a href="powerplayai.html">PowerPlayAI</a></li>
+          <li><a href="quantumbob.html">Quantum Bob</a></li>
+          <li><a href="everydaygrace.html">Everyday Grace</a></li>
+          <li><a href="humbly.html">Humbly</a></li>
+          <li><a href="syncboy.html">SyncBoy</a></li>
+          <li><a href="copyclipper.html">CopyClipper</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="https://apps.apple.com/us/developer/squatchcraft-llc/id1440325922" target="_blank" rel="noopener">App Store developer page</a></li>
+          <li><a href="mailto:colsonrice@gmail.com">Email the studio</a></li>
+          <li><a href="https://www.greatdestinationvacations.com" target="_blank" rel="noopener">Great Destinations Vacations</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <span>© 2026 SquatchCraft LLC — All rights reserved.</span>
+      <span>Made in Michigan.</span>
+    </div>
   </footer>
 
   <script src="script.js"></script>

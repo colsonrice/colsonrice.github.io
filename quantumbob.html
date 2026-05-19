@@ -1,64 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <title>QuantumBob - Play Real Quantum Physics | SquatchCraft Apps</title>
-  <meta name="description" content="QuantumBob is an iOS game where you guess quantum measurement outcomes and compete against an AI powered by real entanglement data from IBM's quantum processor.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantum Bob — Play real quantum experiments | SquatchCraft</title>
+  <meta name="description" content="Quantum Bob lets you guess quantum measurement outcomes and compete against an AI powered by real entanglement data from IBM's quantum processor. Can you beat quantum physics?">
+  <link rel="icon" href="assets/icons/quantumbob.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
-    <h1>SquatchCraft Apps</h1>
-    <p>Explore a suite of thoughtfully crafted applications that inspire creativity, productivity, and spiritual growth.</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="everydaygrace.html">Everyday Grace</a></li>
-        <li><a href="https://www.greatdestinationvacations.com">Great Destinations Vacations</a></li>
-        <li><a href="powerplayai.html">Power Play AI</a></li>
-        <li><a href="copyclipper.html">CopyClipper</a></li>
-        <li><a href="quantumbob.html">QuantumBob</a></li>
-        <li><a href="syncboy.html">SyncBoy</a></li>
-        <li><a href="tanklab.html">TankLab</a></li>
+<body data-app="quantumbob">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
+      <ul class="nav-links">
+        <li><a href="index.html#apps">Apps</a></li>
+        <li><a href="index.html#studio">Studio</a></li>
+        <li><a href="https://apps.apple.com/us/app/quantum-bob/id6759178420" class="nav-cta" target="_blank" rel="noopener">Get Quantum Bob</a></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
-    </nav>
-  </header>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+    </div>
+  </nav>
 
-  <main class="container">
-    <section>
-      <h2>QuantumBob</h2>
-      <p class="subtitle">Can you outsmart quantum physics?</p>
+  <main>
+    <section class="app-hero shell">
+      <div class="app-hero-text reveal">
+        <div class="icon-tile"><img src="assets/icons/quantumbob.png" alt="Quantum Bob icon"></div>
+        <span class="eyebrow">Education · Game Center enabled</span>
+        <h1 style="margin-top:18px;">Can you beat <span class="serif gradient-text">quantum physics?</span></h1>
+        <p class="tagline">Guess quantum measurement outcomes and compete against an AI powered by real entanglement data from IBM's quantum processor.</p>
+        <p class="summary">No physics background required. Play single-player or multiplayer, climb the leaderboards, and pick up the actual ideas behind Bell inequalities and entanglement along the way.</p>
+        <div class="app-hero-actions">
+          <a class="btn btn-primary btn-arrow" href="https://apps.apple.com/us/app/quantum-bob/id6759178420" target="_blank" rel="noopener">Get on the App Store</a>
+          <a class="btn btn-ghost" href="#features">How it works</a>
+        </div>
+      </div>
+      <div class="app-hero-device reveal">
+        <div class="phones">
+          <div class="phone back-left"><img src="assets/screenshots/quantumbob/2.png" alt=""></div>
+          <div class="phone front"><img src="assets/screenshots/quantumbob/1.png" alt="Quantum Bob game"></div>
+          <div class="phone back-right"><img src="assets/screenshots/quantumbob/3.png" alt=""></div>
+        </div>
+      </div>
+    </section>
 
-      <p><strong>QuantumBob</strong> is a quantum physics game where you guess the outcomes of real quantum measurements and compete against Alice, an AI opponent powered by actual entanglement data from IBM's quantum processor.</p>
+    <section id="features" class="shell" style="padding-top:0;">
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <span class="eyebrow">What's inside</span>
+          <h2>Real data. Real physics. Actually fun.</h2>
+        </div>
+      </div>
+      <div class="features">
+        <div class="feature reveal"><div class="ico">⚛️</div><h3>Real quantum data</h3><p>Game outcomes are driven by real measurements from IBM's Marrakesh quantum processor.</p></div>
+        <div class="feature reveal"><div class="ico">🤖</div><h3>Meet Alice</h3><p>The AI opponent uses quantum advantage to beat you over the long run — but you'll have your moments.</p></div>
+        <div class="feature reveal"><div class="ico">🏆</div><h3>Ranked &amp; leaderboards</h3><p>Game Center integration with global rankings and quick matches.</p></div>
+        <div class="feature reveal"><div class="ico">👥</div><h3>Multiplayer</h3><p>Challenge a friend and let the quantum gods decide.</p></div>
+        <div class="feature reveal"><div class="ico">📚</div><h3>Interactive lessons</h3><p>Bell inequality, entanglement, and superposition — explained with your own gameplay.</p></div>
+        <div class="feature reveal"><div class="ico">🎓</div><h3>For everyone</h3><p>Designed for curious players. No physics background required.</p></div>
+      </div>
+    </section>
 
-      <p>Every round, a quantum computer has already measured an entangled particle. You guess the result: 0 or 1. Alice uses her linked particle to make the same prediction. The quantum correlations give her an edge that no classical strategy can match.</p>
+    <section class="shell" style="padding-top:0;">
+      <div class="section-head reveal">
+        <div class="section-head-text">
+          <span class="eyebrow">Screenshots</span>
+          <h2>What you'll see.</h2>
+        </div>
+      </div>
+      <div class="shots reveal">
+        <div class="shots-track">
+          <div class="shot"><img src="assets/screenshots/quantumbob/1.png" alt="Quantum Bob screenshot 1" loading="lazy"></div>
+          <div class="shot"><img src="assets/screenshots/quantumbob/2.png" alt="Quantum Bob screenshot 2" loading="lazy"></div>
+          <div class="shot"><img src="assets/screenshots/quantumbob/3.png" alt="Quantum Bob screenshot 3" loading="lazy"></div>
+          <div class="shot"><img src="assets/screenshots/quantumbob/4.png" alt="Quantum Bob screenshot 4" loading="lazy"></div>
+          <div class="shot"><img src="assets/screenshots/quantumbob/5.png" alt="Quantum Bob screenshot 5" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
 
-      <h3>How It Works</h3>
-      <ul>
-        <li><strong>Real quantum data</strong> from IBM's Marrakesh quantum processor, not simulations</li>
-        <li><strong>Play 10 rounds</strong> per game and try to beat Alice's quantum-powered predictions</li>
-        <li><strong>Learn as you play</strong> with contextual tips about entanglement, the classical limit, and Bell's theorem</li>
-        <li><strong>Track your stats</strong> with perfect rounds, win average, and Alice's accuracy over time</li>
-        <li><strong>Challenge friends</strong> with local multiplayer pass-and-play mode</li>
-        <li><strong>Explore the proof</strong> with built-in statistical tests that verify the quantum advantage is real</li>
-      </ul>
-
-      <h3>The Science</h3>
-      <p>QuantumBob is built on the CHSH Bell experiment, one of the most important experiments in quantum physics. Without quantum entanglement, the best any strategy can achieve is 75% accuracy (the classical limit). But quantum correlations push Alice's accuracy to approximately 85%, a number called the Tsirelson bound. That gap is physically impossible without quantum physics, and you can see it happen in real time as you play.</p>
-
-      <h3>Links</h3>
-      <p><a href="quantumbob-privacy.html" class="btn">Privacy Policy</a></p>
-      <p><a href="quantumbob-support.html" class="btn">Support</a></p>
-      <p><a href="index.html">← Back to All Apps</a></p>
+    <section class="shell" style="padding-top:0;">
+      <div class="about reveal">
+        <div>
+          <span class="eyebrow">Links</span>
+          <h2 style="margin-top:14px;">Dig in.</h2>
+          <p>Quantum Bob is free on the App Store. Bring a friend.</p>
+        </div>
+        <div>
+          <a class="btn btn-primary btn-arrow" href="https://apps.apple.com/us/app/quantum-bob/id6759178420" target="_blank" rel="noopener">Get Quantum Bob</a>
+          <div style="margin-top:14px;">
+            <a href="quantumbob-support.html" style="color:var(--text-mute); font-size:.92rem;">Support</a>
+            <span style="color:var(--text-dim); margin:0 8px;">·</span>
+            <a href="quantumbob-privacy.html" style="color:var(--text-mute); font-size:.92rem;">Privacy</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 SquatchCraft LLC - All Rights Reserved</p>
-    <p>Crafted with passion and purpose.</p>
+  <footer class="footer">
+    <div class="shell footer-bottom">
+      <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
+      <span>© 2026 SquatchCraft LLC — All rights reserved.</span>
+    </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

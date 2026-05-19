@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CopyClipper | Colson's App Portfolio</title>
+  <link rel="icon" href="assets/icons/tanklab.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
-    <h1>SquatchCraft Apps</h1>
-    <p>Explore a suite of thoughtfully crafted applications that inspire creativity, productivity, and innovation.</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="everydaygrace.html">Everyday Grace</a></li>
-        <li><a href="ldsjournal.html">LDS Journal</a></li>
-        <li><a href="powerplayai.html">Power Play AI</a></li>
-        <li><a href="copyclipper.html">CopyClipper</a></li>
-        <li><a href="syncboy.html">SyncBoy</a></li>
-        <li><a href="tanklab.html">TankLab</a></li>
+<body data-app="copyclipper">
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
+      <ul class="nav-links">
+        <li><a href="index.html#apps">Apps</a></li>
+        <li><a href="index.html#studio">Studio</a></li>
+        <li><a href="copyclipper.html" class="nav-cta">CopyClipper</a></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"></button>
-    </nav>
-  </header>
-  
-  <main class="container">
-    <section>
-      <h2>CopyClipper</h2>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="shell" style="padding-top:60px;">
+      <div class="prose">
+        <div style="margin-bottom:24px;">
+          <span class="eyebrow">CopyClipper · Privacy Policy</span>
+        </div>
+        <h2>CopyClipper</h2>
       <p><strong>CopyClipper</strong> is a macOS utility that makes it effortless to prepare entire codebases for AI assistants. Select a local folder or GitHub repository, filter by file types, and copy your project into one clean, labeled bundle — ready to paste into your favorite LLM for debugging, refactoring, or feature development.</p>
       
       <h3>Key Features</h3>
@@ -43,13 +44,19 @@
       <p>If you have any questions or need support, please contact us at <a href="mailto:hello@squatchcraft.com">hello@squatchcraft.com</a>.</p>
       <p><a href="copyclipper-privacy.html" class="btn">View Privacy Policy</a></p>
       <p><a href="index.html">← Back to All Apps</a></p>
+        <hr>
+        <p><a href="copyclipper.html">&larr; Back to CopyClipper</a></p>
+      </div>
     </section>
   </main>
-  
-  <footer>
-    <p>&copy; 2025 Colson - All Rights Reserved</p>
-    <p>Crafted with passion and precision.</p>
+
+  <footer class="footer">
+    <div class="shell footer-bottom">
+      <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
+      <span>&copy; 2026 SquatchCraft LLC &mdash; All rights reserved.</span>
+    </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
