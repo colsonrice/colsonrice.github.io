@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────
-   SquatchCraft — Dark Glass + Accent Gradient Design System
+   SquatchCraft, Dark Glass + Accent Gradient Design System
    2026 refresh
    ───────────────────────────────────────────────────────────── */
 
@@ -20,7 +20,7 @@
   --text-mute: #aab0bd;
   --text-dim: #6b7184;
 
-  /* Accent (default — overridden per-page) */
+  /* Accent (default, overridden per-page) */
   --accent: #7aa2ff;
   --accent-2: #c084fc;
   --accent-3: #38bdf8;
@@ -36,13 +36,12 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Per-app accent palettes — set on <body data-app="..."> */
+/* Per-app accent palettes, set on <body data-app="..."> */
 body[data-app="tanklab"]      { --accent:#3ad6ff; --accent-2:#22e7c2; --accent-3:#7aa2ff; --accent-soft:rgba(58,214,255,0.12); --accent-glow:rgba(58,214,255,0.45); }
 body[data-app="powerplayai"]  { --accent:#ffd166; --accent-2:#ef476f; --accent-3:#ff8a3d; --accent-soft:rgba(255,209,102,0.12); --accent-glow:rgba(255,209,102,0.45); }
 body[data-app="quantumbob"]   { --accent:#b388ff; --accent-2:#7c4dff; --accent-3:#22d3ee; --accent-soft:rgba(179,136,255,0.12); --accent-glow:rgba(179,136,255,0.45); }
 body[data-app="everydaygrace"]{ --accent:#f5c062; --accent-2:#f97a64; --accent-3:#a78bfa; --accent-soft:rgba(245,192,98,0.12); --accent-glow:rgba(245,192,98,0.45); }
 body[data-app="humbly"]       { --accent:#cbb18a; --accent-2:#86b4a1; --accent-3:#d4a373; --accent-soft:rgba(203,177,138,0.12); --accent-glow:rgba(203,177,138,0.45); }
-body[data-app="bidsnap"]      { --accent:#34d399; --accent-2:#84cc16; --accent-3:#22d3ee; --accent-soft:rgba(52,211,153,0.12); --accent-glow:rgba(52,211,153,0.45); }
 body[data-app="syncboy"]      { --accent:#9bea3f; --accent-2:#22c55e; --accent-3:#84cc16; --accent-soft:rgba(155,234,63,0.12); --accent-glow:rgba(155,234,63,0.45); }
 body[data-app="copyclipper"]  { --accent:#60a5fa; --accent-2:#22d3ee; --accent-3:#a78bfa; --accent-soft:rgba(96,165,250,0.12); --accent-glow:rgba(96,165,250,0.45); }
 body[data-app="greatdestinations"]{ --accent:#fb923c; --accent-2:#f43f5e; --accent-3:#fbbf24; --accent-soft:rgba(251,146,60,0.12); --accent-glow:rgba(251,146,60,0.45); }
@@ -63,7 +62,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Aurora background — fixed, behind everything */
+/* Aurora background, fixed, behind everything */
 body::before {
   content: '';
   position: fixed;
@@ -470,16 +469,89 @@ section { padding: clamp(64px, 9vw, 130px) 0; }
 .app-card .arrow::after { content: '→'; transition: transform 0.25s var(--ease); }
 .app-card:hover .arrow::after { transform: translateX(4px); }
 
-/* Per-card accent — set via inline style or data-accent */
+/* Per-card accent, set via inline style or data-accent */
 .app-card[data-accent="tanklab"]      { --accent:#3ad6ff; --accent-2:#22e7c2; --accent-soft:rgba(58,214,255,0.12); --accent-glow:rgba(58,214,255,0.45); }
 .app-card[data-accent="powerplayai"]  { --accent:#ffd166; --accent-2:#ef476f; --accent-soft:rgba(255,209,102,0.12); --accent-glow:rgba(255,209,102,0.45); }
 .app-card[data-accent="quantumbob"]   { --accent:#b388ff; --accent-2:#7c4dff; --accent-soft:rgba(179,136,255,0.12); --accent-glow:rgba(179,136,255,0.45); }
 .app-card[data-accent="everydaygrace"]{ --accent:#f5c062; --accent-2:#f97a64; --accent-soft:rgba(245,192,98,0.12); --accent-glow:rgba(245,192,98,0.45); }
 .app-card[data-accent="humbly"]       { --accent:#cbb18a; --accent-2:#86b4a1; --accent-soft:rgba(203,177,138,0.12); --accent-glow:rgba(203,177,138,0.45); }
-.app-card[data-accent="bidsnap"]      { --accent:#34d399; --accent-2:#84cc16; --accent-soft:rgba(52,211,153,0.12); --accent-glow:rgba(52,211,153,0.45); }
 .app-card[data-accent="syncboy"]      { --accent:#9bea3f; --accent-2:#22c55e; --accent-soft:rgba(155,234,63,0.12); --accent-glow:rgba(155,234,63,0.45); }
 .app-card[data-accent="copyclipper"]  { --accent:#60a5fa; --accent-2:#22d3ee; --accent-soft:rgba(96,165,250,0.12); --accent-glow:rgba(96,165,250,0.45); }
 .app-card[data-accent="greatdestinations"]{ --accent:#fb923c; --accent-2:#f43f5e; --accent-soft:rgba(251,146,60,0.12); --accent-glow:rgba(251,146,60,0.45); }
+
+/* ─── Web work grid ─── */
+.web-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.web-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.web-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hi);
+  box-shadow: 0 30px 70px -20px rgba(0,0,0,0.6), 0 0 80px var(--accent-glow);
+}
+.web-card[data-accent="sudsaway"] { --accent:#ff8a3d; --accent-2:#1e3a8a; --accent-glow:rgba(255,138,61,0.35); }
+.web-card[data-accent="greatdestinations"] { --accent:#fb923c; --accent-2:#a78bfa; --accent-glow:rgba(251,146,60,0.35); }
+
+.web-shot {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0a0a10;
+  border-bottom: 1px solid var(--border);
+}
+.web-shot::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 28px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+.web-shot::after {
+  content: '\25CF \00A0 \25CF \00A0 \25CF';
+  position: absolute;
+  top: 8px; left: 14px;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.55rem;
+  letter-spacing: 0.05em;
+  z-index: 3;
+  pointer-events: none;
+}
+.web-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.web-card:hover .web-shot img { transform: scale(1.03); }
+.web-meta { padding: 26px 28px 28px; }
+.web-name { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+.web-tag { font-size: 0.85rem; color: var(--text-mute); margin-top: 4px; }
+.web-desc { font-size: 0.96rem; color: var(--text-mute); margin-top: 14px; max-width: 50ch; }
+.web-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.92rem;
+}
 
 /* ─── About strip ─── */
 .about {
@@ -804,6 +876,7 @@ footer.footer {
   }
   .nav-links.open a { width: 100%; }
   .featured { grid-template-columns: 1fr; }
+  .web-grid { grid-template-columns: 1fr; }
   .app-hero { grid-template-columns: 1fr; }
   .app-hero-device { order: 2; }
   .about { grid-template-columns: 1fr; }

@@ -27,7 +27,7 @@
         <div style="margin-bottom:24px;">
           <span class="eyebrow">PowerPlayAI · Proof</span>
         </div>
-        <h2>Power Play AI &mdash; Enhanced Model: The Proof</h2>
+        <h2>Power Play AI, Enhanced Model: The Proof</h2>
       <p><em>Validation generated April 2026 &middot; Last updated May 2026</em></p>
 
       <div class="proof-hero">
@@ -43,13 +43,13 @@
 
       <div class="proof-section">
         <h3>1. Tested against random picks</h3>
-        <p>We pitted the Enhanced Model against uniform random picks across 10,000 independent walk-forward trials. Each trial replayed 198 real Powerball draws from the period 2025-01-01 through 2026-04-06. In total, that's 1,980,000 ticket-by-ticket comparisons against an honest random baseline. For every trial, the model and baseline received identical target draws and identical RNG seeds &mdash; so the comparison is strictly paired.</p>
+        <p>We pitted the Enhanced Model against uniform random picks across 10,000 independent walk-forward trials. Each trial replayed 198 real Powerball draws from the period 2025-01-01 through 2026-04-06. In total, that's 1,980,000 ticket-by-ticket comparisons against an honest random baseline. For every trial, the model and baseline received identical target draws and identical RNG seeds, so the comparison is strictly paired.</p>
         <p>The same engine powers picks for Mega Millions and EuroMillions. The headline validation here is on Powerball specifically because it has the largest publicly-available draw history.</p>
       </div>
 
       <div class="proof-section">
         <h3>2. No future-data cheating (walk-forward backtesting)</h3>
-        <p>For every draw at index <em>t</em>, the Enhanced Model received only <code>draws[0:t]</code> as input. No future information of any kind was accessible to the model. This is called <strong>walk-forward backtesting</strong> and it is the standard for honest evaluation in finance and machine learning &mdash; specifically because most published lottery-prediction studies fail when they're forced to play by these rules.</p>
+        <p>For every draw at index <em>t</em>, the Enhanced Model received only <code>draws[0:t]</code> as input. No future information of any kind was accessible to the model. This is called <strong>walk-forward backtesting</strong> and it is the standard for honest evaluation in finance and machine learning, specifically because most published lottery-prediction studies fail when they're forced to play by these rules.</p>
       </div>
 
       <div class="proof-section">
@@ -105,13 +105,13 @@
           </tbody>
         </table>
         <h4>The literature comparison</h4>
-        <p>Among the published lottery-prediction methods we reviewed &mdash; LSTM networks, ARIMA models, Markov chains, PatternSight, frequency-only systems &mdash; <strong>none</strong> produced a statistically significant walk-forward lift on a major lottery game. Most produced results within &plusmn;0.1% of random chance. We do not claim this review is exhaustive of every lottery study ever conducted; we do claim that nothing comparable has been published, by the standard of properly walk-forward evaluation, in the literature we surveyed.</p>
+        <p>Among the published lottery-prediction methods we reviewed, LSTM networks, ARIMA models, Markov chains, PatternSight, frequency-only systems, <strong>none</strong> produced a statistically significant walk-forward lift on a major lottery game. Most produced results within &plusmn;0.1% of random chance. We do not claim this review is exhaustive of every lottery study ever conducted; we do claim that nothing comparable has been published, by the standard of properly walk-forward evaluation, in the literature we surveyed.</p>
       </div>
 
       <div class="hedge">
         <h3>How to read this edge</h3>
-        <p>The Enhanced Model picks numbers that match winning balls at a higher rate than uniform random selection &mdash; 56.95% in 10,000 head-to-head trials, with statistical confidence indistinguishable from impossible by chance (binomial <em>p</em> &asymp; 6.28 &times; 10<sup>-72</sup>). Among the published lottery-prediction systems we surveyed, none has produced a comparable statistically significant walk-forward result on a major lottery game. By every test we ran, this is the strongest validated edge in lottery number selection we know of.</p>
-        <p>What this can't do is guarantee a specific prize. The underlying lottery is still random, and no model changes the rules of the lottery itself. The edge lives in the long-run match rate of your tickets &mdash; which is exactly what you want from a number-selection engine. Treat it the way you'd treat a good poker strategy: it doesn't decide a single hand, but it tilts the long run.</p>
+        <p>The Enhanced Model picks numbers that match winning balls at a higher rate than uniform random selection, 56.95% in 10,000 head-to-head trials, with statistical confidence indistinguishable from impossible by chance (binomial <em>p</em> &asymp; 6.28 &times; 10<sup>-72</sup>). Among the published lottery-prediction systems we surveyed, none has produced a comparable statistically significant walk-forward result on a major lottery game. By every test we ran, this is the strongest validated edge in lottery number selection we know of.</p>
+        <p>What this can't do is guarantee a specific prize. The underlying lottery is still random, and no model changes the rules of the lottery itself. The edge lives in the long-run match rate of your tickets, which is exactly what you want from a number-selection engine. Treat it the way you'd treat a good poker strategy: it doesn't decide a single hand, but it tilts the long run.</p>
       </div>
 
       <div class="proof-section">
@@ -119,7 +119,7 @@
         <p>The methodology is fully reproducible from public data. Steps:</p>
         <ol>
           <li>Fetch Powerball draws from the public NY Open Data API: <code>https://data.ny.gov/resource/d6yy-54nr.json</code></li>
-          <li>Filter to current rules (main balls 1&ndash;69, Powerball 1&ndash;26)</li>
+          <li>Filter to current rules (main balls 1, 69, Powerball 1, 26)</li>
           <li>Implement the algorithm exactly as specified in the methodology document below</li>
           <li>For each holdout period, run 10,000 paired (model, random) seeds with the documented RNG construction</li>
           <li>Run the listed statistical tests on the paired seed-level averages</li>
@@ -127,18 +127,18 @@
         <p>Expected results should match within normal floating-point variance.</p>
 
         <h4>The methodology and the artifact</h4>
-        <p>The full validation methodology &mdash; what we tested, how we tested it, the statistical-test choices, the literature comparison, and the reproducibility framework &mdash; is on a dedicated page. The machine-readable result artifact is the JSON.</p>
+        <p>The full validation methodology, what we tested, how we tested it, the statistical-test choices, the literature comparison, and the reproducibility framework, is on a dedicated page. The machine-readable result artifact is the JSON.</p>
         <div class="download-row">
           <a href="powerplayai-methodology.html">Read the methodology &amp; literature comparison</a>
           <a href="proof/validation_proof.json">Machine-readable proof (JSON)</a>
         </div>
-        <p class="small-note">The methodology page describes the engine, the validation discipline, and the literature comparison in enough detail for an independent researcher to apply the same evaluation framework to any candidate model. Production-engine hyperparameters (specific window sizes, bias-strength bounds, smoothing constants) are not published &mdash; the line we draw is "show the homework, not the parameter recipe," same as quantitative-finance signal vendors.</p>
+        <p class="small-note">The methodology page describes the engine, the validation discipline, and the literature comparison in enough detail for an independent researcher to apply the same evaluation framework to any candidate model. Production-engine hyperparameters (specific window sizes, bias-strength bounds, smoothing constants) are not published, the line we draw is "show the homework, not the parameter recipe," same as quantitative-finance signal vendors.</p>
       </div>
 
       <div class="proof-section">
         <h3>8. About the engine</h3>
         <p>The Enhanced Model is rule-based and runs entirely on your device. It is not a neural network, contains no trained machine-learning weights, and never calls a server during prediction. It weighs less than 1 KB and produces a pick in under one millisecond.</p>
-        <p>The internal recipe &mdash; the specific way the engine biases its tickets &mdash; is the proprietary part of the product, and it stays that way. What's public is the validation: every test, every result, every method we used to confirm the edge is real. That's the standard line drawn by quantitative-finance signal vendors, and it's the line we draw here.</p>
+        <p>The internal recipe, the specific way the engine biases its tickets, is the proprietary part of the product, and it stays that way. What's public is the validation: every test, every result, every method we used to confirm the edge is real. That's the standard line drawn by quantitative-finance signal vendors, and it's the line we draw here.</p>
       </div>
 
       <p style="margin-top:36px;"><a href="powerplayai.html">&larr; Back to Power Play AI</a></p>
@@ -151,7 +151,7 @@
   <footer class="footer">
     <div class="shell footer-bottom">
       <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
-      <span>&copy; 2026 SquatchCraft LLC &mdash; All rights reserved.</span>
+      <span>&copy; 2026 SquatchCraft LLC, All rights reserved.</span>
     </div>
   </footer>
 

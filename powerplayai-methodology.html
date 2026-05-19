@@ -27,10 +27,10 @@
         <div style="margin-bottom:24px;">
           <span class="eyebrow">PowerPlayAI · Methodology</span>
         </div>
-        <h2>Power Play AI &mdash; Enhanced Model Methodology</h2>
+        <h2>Power Play AI, Enhanced Model Methodology</h2>
       <p><em>Last updated May 2026</em></p>
 
-      <p>This page describes how the Enhanced Model selects numbers, how we validated it, and how an independent researcher could check our claims for themselves. The exact tuned parameters of the production engine are not published &mdash; that's the line between "show your homework" and "publish a copy-paste recipe." Everything that supports the credibility of the result is on this page.</p>
+      <p>This page describes how the Enhanced Model selects numbers, how we validated it, and how an independent researcher could check our claims for themselves. The exact tuned parameters of the production engine are not published, that's the line between "show your homework" and "publish a copy-paste recipe." Everything that supports the credibility of the result is on this page.</p>
 
       <div class="callout">
         <strong>Headline result.</strong> In 10,000 walk-forward trials on real Powerball draws, the Enhanced Model picked numbers that matched winning balls at a higher rate than uniform random selection in 56.95% of head-to-head comparisons (binomial <em>p</em> = 6.28 &times; 10<sup>-72</sup>; Wilcoxon <em>p</em> = 8.88 &times; 10<sup>-104</sup>; Cohen's <em>d</em> = 0.227; all bootstrap 95% CIs exclude zero; all four primary tests survive Benjamini-Hochberg FDR correction). Full numbers and the machine-readable artifact are linked from the <a href="powerplayai-proof.html">proof page</a>.
@@ -39,7 +39,7 @@
       <div class="meth-section">
         <h3>What the engine is</h3>
         <p>The Enhanced Model is a rule-based selection engine. It runs entirely on your iPhone, weighs less than 1 KB, and produces a pick in under one millisecond. It is not a neural network, contains no trained machine-learning weights, and never calls a server during prediction.</p>
-        <p>The internal logic that produces the bias toward winning combinations is the proprietary part of the product. We treat the recipe the way a quantitative-finance signal vendor treats theirs: the validation discipline is published, the recipe is not. What follows on this page is everything an independent researcher needs to verify the rigor of the result &mdash; not the recipe to reproduce the engine.</p>
+        <p>The internal logic that produces the bias toward winning combinations is the proprietary part of the product. We treat the recipe the way a quantitative-finance signal vendor treats theirs: the validation discipline is published, the recipe is not. What follows on this page is everything an independent researcher needs to verify the rigor of the result, not the recipe to reproduce the engine.</p>
       </div>
 
       <div class="meth-section">
@@ -47,10 +47,10 @@
         <p>We applied evaluation discipline borrowed from clinical-trial and quantitative-finance practice. Every choice below was made to remove the standard ways lottery-prediction studies fool themselves:</p>
 
         <h4>Walk-forward backtesting</h4>
-        <p>For each evaluation draw at index <em>t</em>, the model received only <code>draws[0:t]</code> as input &mdash; every draw before the target, and nothing after. There is no path by which future information could leak into a prediction. Walk-forward is the standard for honest evaluation in finance and machine learning, and most published lottery-prediction studies that look impressive in research papers fail outright when they're forced to play by these rules.</p>
+        <p>For each evaluation draw at index <em>t</em>, the model received only <code>draws[0:t]</code> as input, every draw before the target, and nothing after. There is no path by which future information could leak into a prediction. Walk-forward is the standard for honest evaluation in finance and machine learning, and most published lottery-prediction studies that look impressive in research papers fail outright when they're forced to play by these rules.</p>
 
         <h4>Paired comparison against uniform random</h4>
-        <p>For every trial, the model and a uniform-random baseline received identical target draws and identical RNG seeds. The two sides differed in <em>only</em> their selection logic. All statistical tests are paired &mdash; we compare the model and the baseline on the exact same draws, never on parallel-universe samples.</p>
+        <p>For every trial, the model and a uniform-random baseline received identical target draws and identical RNG seeds. The two sides differed in <em>only</em> their selection logic. All statistical tests are paired, we compare the model and the baseline on the exact same draws, never on parallel-universe samples.</p>
 
         <h4>Seed-level aggregation (most conservative)</h4>
         <p>The statistical unit is one seed's average match rate across all evaluation draws. With 10,000 seeds, that's <em>N</em> = 10,000 paired observations. We did not treat each individual draw as an independent observation, which would have inflated significance dramatically. Seed-level is the most conservative inference choice.</p>
@@ -77,15 +77,15 @@
             <tr><td>Commercial AI lottery tools</td><td>Various, unverified</td><td>Unaudited claims</td><td>No peer review</td></tr>
           </tbody>
         </table>
-        <p class="small-note">"We surveyed" is load-bearing &mdash; we don't claim to have reviewed every lottery study ever conducted. We claim that, among the systems with publicly available methodology that we examined, none has produced a comparable result under proper walk-forward evaluation.</p>
+        <p class="small-note">"We surveyed" is load-bearing, we don't claim to have reviewed every lottery study ever conducted. We claim that, among the systems with publicly available methodology that we examined, none has produced a comparable result under proper walk-forward evaluation.</p>
       </div>
 
       <div class="meth-section">
         <h3>Reproducibility</h3>
         <p>The validation methodology is fully reproducible. An independent researcher building any candidate lottery-prediction system can apply the same evaluation framework to test it:</p>
         <ol>
-          <li>Fetch Powerball draws from the public NY Open Data API: <code>https://data.ny.gov/resource/d6yy-54nr.json</code>. Pagination is standard Socrata; filter to current rules (main balls 1&ndash;69, Powerball 1&ndash;26).</li>
-          <li>Implement a uniform random baseline: 5 main balls without replacement from 1&ndash;69, 1 ball from 1&ndash;26.</li>
+          <li>Fetch Powerball draws from the public NY Open Data API: <code>https://data.ny.gov/resource/d6yy-54nr.json</code>. Pagination is standard Socrata; filter to current rules (main balls 1, 69, Powerball 1, 26).</li>
+          <li>Implement a uniform random baseline: 5 main balls without replacement from 1, 69, 1 ball from 1, 26.</li>
           <li>Implement and freeze your candidate model on a development split.</li>
           <li>For each evaluation draw, give the candidate only the prior draws (no future leakage).</li>
           <li>For each of <em>N</em> seeds, generate paired (candidate, baseline) tickets using the same RNG seed; score main-ball matches per ticket.</li>
@@ -99,13 +99,13 @@
 
       <div class="meth-section">
         <h3>What is and isn't published</h3>
-        <p>To protect the engine from trivial cloning while keeping the validation honest, the production model's tuned hyperparameters &mdash; specific window sizes, bias-strength bounds, smoothing constants, and the candidate-selection cross-validation procedure &mdash; are not published on this page. The engine is small enough that, if it were published, anyone could clone it in an afternoon, and the small revenue from a small subscription business would not survive that. This is the same line that quantitative finance and trading-signal vendors draw: <em>we publish what we tested and how we tested it, not the parameter set that does the work.</em></p>
+        <p>To protect the engine from trivial cloning while keeping the validation honest, the production model's tuned hyperparameters, specific window sizes, bias-strength bounds, smoothing constants, and the candidate-selection cross-validation procedure, are not published on this page. The engine is small enough that, if it were published, anyone could clone it in an afternoon, and the small revenue from a small subscription business would not survive that. This is the same line that quantitative finance and trading-signal vendors draw: <em>we publish what we tested and how we tested it, not the parameter set that does the work.</em></p>
         <p>What an independent researcher gets from this page:</p>
         <ul>
           <li>The runtime characteristics of the engine (rule-based, on-device, sub-millisecond inference, no trained weights, no network calls).</li>
           <li>The complete validation methodology, including every statistical-test choice and the multiple-comparison correction.</li>
           <li>The exact data source, with the public API endpoint.</li>
-          <li>The reproducibility framework &mdash; enough to apply the same evaluation to any candidate model.</li>
+          <li>The reproducibility framework, enough to apply the same evaluation to any candidate model.</li>
           <li>The machine-readable result artifact for the production engine.</li>
         </ul>
         <p>That is sufficient to verify the rigor of the result without giving away the parameter recipe.</p>
@@ -121,7 +121,7 @@
   <footer class="footer">
     <div class="shell footer-bottom">
       <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
-      <span>&copy; 2026 SquatchCraft LLC &mdash; All rights reserved.</span>
+      <span>&copy; 2026 SquatchCraft LLC, All rights reserved.</span>
     </div>
   </footer>
 
