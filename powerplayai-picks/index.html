@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PowerPlayAI — House Picks, Published Before Every Draw</title>
+<meta name="description" content="Real AI-model lottery picks for Powerball and Mega Millions, published before each drawing and scored against the winning numbers. Wins and misses, no guarantees.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,900&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #08080d;
+  --bg-2: #0d0d15;
+  --surface: #14141f;
+  --surface-2: #1b1b29;
+  --border: #262636;
+  --ink: #f2f1f7;
+  --muted: #8b8ba3;
+  --faint: #5b5b73;
+  --accent: #8b7bff;
+  --accent-glow: rgba(139,123,255,0.45);
+  --gold: #f2c14e;
+  --gold-glow: rgba(242,193,78,0.35);
+  --green: #4ad991;
+  --pb: #e4342b;
+  --mb: #f5b301;
+  --ball: #f4f1e6;
+  --ball-ink: #14141f;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Hanken Grotesk', -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+/* Atmospheric backdrop — the app's oil-in-water glow, restrained */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -2;
+  background:
+    radial-gradient(60% 45% at 15% 0%, rgba(139,123,255,0.14), transparent 60%),
+    radial-gradient(50% 40% at 100% 15%, rgba(242,193,78,0.08), transparent 55%),
+    radial-gradient(70% 50% at 50% 110%, rgba(139,123,255,0.10), transparent 60%);
+}
+.wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+a { color: inherit; }
+
+/* ---- Nav ---- */
+nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.02em; }
+.brand .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent-glow); }
+.nav-cta { font-family: var(--sans); font-weight: 600; font-size: 0.9rem; padding: 9px 18px; border-radius: 999px;
+  background: var(--ink); color: var(--bg); text-decoration: none; transition: transform .15s ease, box-shadow .2s ease; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+
+/* ---- Hero ---- */
+.hero { padding: 60px 0 40px; }
+.eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent); display: inline-flex; align-items: center; gap: 9px; margin-bottom: 22px; }
+.eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--accent); opacity: .6; }
+.hero h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(2.6rem, 7vw, 5rem); line-height: 0.98;
+  letter-spacing: -0.025em; margin-bottom: 24px; }
+.hero h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
+.hero .lead { font-size: clamp(1.05rem, 2vw, 1.28rem); color: var(--muted); max-width: 40ch; }
+.trust-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.chip { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); padding: 7px 13px; border: 1px solid var(--border);
+  border-radius: 8px; background: rgba(255,255,255,0.02); display: inline-flex; gap: 8px; align-items: center; }
+.chip b { color: var(--ink); font-weight: 600; }
+
+/* ---- Section framing ---- */
+section { padding: 20px 0; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 44px 0 22px; flex-wrap: wrap; }
+.sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.7rem, 3.5vw, 2.4rem); letter-spacing: -0.02em; }
+.sec-head p { color: var(--muted); font-size: 0.95rem; max-width: 42ch; }
+
+/* ---- Draw cards ---- */
+.draws { display: grid; gap: 22px; }
+@media (min-width: 760px) { .draws { grid-template-columns: 1fr 1fr; } }
+.draw-card { position: relative; background: linear-gradient(180deg, var(--surface), var(--bg-2));
+  border: 1px solid var(--border); border-radius: 20px; padding: 26px; overflow: hidden; }
+.draw-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--game), transparent); opacity: .8; }
+.draw-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.game-name { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; letter-spacing: -0.01em; }
+.game-badge { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--bg); background: var(--game); padding: 4px 9px; border-radius: 6px; font-weight: 600; }
+.draw-when { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); margin-bottom: 20px; }
+.draw-when b { color: var(--ink); }
+
+/* pick rows */
+.pick { display: flex; align-items: center; gap: 9px; padding: 11px 0; position: relative; }
+.pick + .pick { border-top: 1px dashed var(--border); }
+.pick-tag { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold); position: absolute; top: 2px; left: 0; }
+.pick.free { padding-top: 20px; }
+.balls { display: flex; gap: 7px; flex-wrap: wrap; }
+.ball { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--sans); font-weight: 700; font-size: 0.95rem; background: radial-gradient(circle at 35% 28%, #fff, var(--ball) 70%);
+  color: var(--ball-ink); box-shadow: inset 0 -3px 6px rgba(0,0,0,.18), 0 2px 5px rgba(0,0,0,.35);
+  animation: pop .5s cubic-bezier(.2,.9,.3,1.3) both; }
+.ball.special { color: #fff; background: radial-gradient(circle at 35% 28%, color-mix(in srgb, var(--game) 60%, #fff), var(--game) 75%);
+  box-shadow: inset 0 -3px 6px rgba(0,0,0,.25), 0 0 12px color-mix(in srgb, var(--game) 40%, transparent); }
+.ball.matched { outline: 2px solid var(--gold); outline-offset: 2px; box-shadow: 0 0 16px var(--gold-glow); }
+@keyframes pop { from { transform: scale(.2); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.free .ball { box-shadow: inset 0 -3px 6px rgba(0,0,0,.18), 0 0 18px var(--gold-glow); }
+
+/* locked overlay */
+.locked-wrap { position: relative; margin-top: 6px; }
+.locked-rows { filter: blur(7px) saturate(.6); opacity: .5; pointer-events: none; user-select: none; }
+.lock-cta { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; text-align: center; padding: 12px; }
+.lock-cta .locknum { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; }
+.lock-cta .locksub { font-size: 0.82rem; color: var(--muted); max-width: 30ch; }
+.lock-btn { margin-top: 6px; font-family: var(--sans); font-weight: 700; font-size: 0.92rem; padding: 11px 22px; border-radius: 999px;
+  background: var(--gold); color: #241a00; text-decoration: none; box-shadow: 0 6px 20px var(--gold-glow); transition: transform .15s ease; }
+.lock-btn:hover { transform: translateY(-2px); }
+
+/* receipt proof strip */
+.proof { margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--border); font-family: var(--mono);
+  font-size: 0.72rem; color: var(--faint); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.proof .stamp { color: var(--green); border: 1px solid color-mix(in srgb, var(--green) 40%, transparent); border-radius: 5px;
+  padding: 2px 7px; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.64rem; font-weight: 600; }
+.proof a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---- Receipts / archive ---- */
+.receipt { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; margin-bottom: 14px; }
+.receipt-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.receipt-game { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.receipt-game b { color: var(--ink); }
+.winning-lbl { font-family: var(--mono); font-size: 0.66rem; color: var(--faint); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+.receipt-pick { display: flex; align-items: center; gap: 9px; padding: 8px 0; border-top: 1px dashed var(--border); }
+.match-badge { font-family: var(--mono); font-size: 0.72rem; margin-left: auto; padding: 3px 9px; border-radius: 6px; white-space: nowrap; }
+.match-badge.hit { color: var(--gold); background: var(--gold-glow); font-weight: 600; }
+.match-badge.miss { color: var(--faint); }
+.empty { text-align: center; padding: 54px 24px; border: 1px dashed var(--border); border-radius: 16px; background: rgba(255,255,255,0.015); }
+.empty .big { font-family: var(--serif); font-size: 1.5rem; margin-bottom: 10px; }
+.empty p { color: var(--muted); max-width: 46ch; margin: 0 auto; }
+
+/* ---- How it works ---- */
+.steps { display: grid; gap: 16px; }
+@media (min-width: 720px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.step { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+.step .n { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.15em; }
+.step h3 { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; margin: 10px 0 8px; }
+.step p { color: var(--muted); font-size: 0.9rem; }
+.step a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---- Final CTA ---- */
+.final { text-align: center; margin: 70px 0 40px; padding: 54px 28px; border: 1px solid var(--border); border-radius: 24px;
+  background: radial-gradient(120% 120% at 50% 0%, rgba(139,123,255,0.12), transparent 60%), var(--bg-2); }
+.final h2 { font-family: var(--serif); font-weight: 900; font-size: clamp(1.9rem, 4.5vw, 3rem); letter-spacing: -0.02em; margin-bottom: 12px; }
+.final p { color: var(--muted); max-width: 44ch; margin: 0 auto 26px; }
+.big-btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--sans); font-weight: 700; font-size: 1.05rem;
+  padding: 16px 34px; border-radius: 999px; background: var(--ink); color: var(--bg); text-decoration: none;
+  box-shadow: 0 10px 34px rgba(0,0,0,.45); transition: transform .15s ease, box-shadow .2s ease; }
+.big-btn:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 14px 40px var(--accent-glow); }
+
+/* ---- Footer ---- */
+footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 34px 0 60px; color: var(--faint); font-size: 0.8rem; }
+footer .disc { max-width: 68ch; margin-bottom: 14px; line-height: 1.6; }
+footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.reveal-load { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.3,1) forwards; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="reveal-load">
+    <div class="brand"><span class="dot"></span> PowerPlayAI</div>
+    <a class="nav-cta" id="navCta" href="#">Get the app</a>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow reveal-load">Public house picks · updated every draw</div>
+    <h1 class="reveal-load" style="animation-delay:.05s">We publish our picks <em>before</em> the draw.</h1>
+    <p class="lead reveal-load" style="animation-delay:.12s">Real AI-model picks for Powerball and Mega Millions — posted here before every drawing, then scored against the winning numbers. Wins <em>and</em> misses. No guarantees, ever.</p>
+    <div class="trust-row reveal-load" style="animation-delay:.2s">
+      <span class="chip"><b>Titan V3</b> model — the same engine in the app</span>
+      <span class="chip">Committed to a <b>public repo</b> before each draw</span>
+      <span class="chip">The timestamp is the <b>proof</b></span>
+    </div>
+  </header>
+
+  <section id="today">
+    <div class="sec-head">
+      <h2>This draw's picks</h2>
+      <p>One free pick per game, in the open. The full five are revealed right here after the draw — or generate your own in the app.</p>
+    </div>
+    <div class="draws" id="draws"><div class="empty"><p>Loading the latest picks…</p></div></div>
+  </section>
+
+  <section id="receipts">
+    <div class="sec-head">
+      <h2>The receipts</h2>
+      <p>Every pick we've published, scored against the real winning numbers. This log only grows.</p>
+    </div>
+    <div id="archive"></div>
+  </section>
+
+  <section id="how">
+    <div class="sec-head"><h2>How it works</h2></div>
+    <div class="steps">
+      <div class="step"><div class="n">01 · BEFORE</div><h3>Picks go public</h3><p>Ahead of each draw, the app's Titan model generates its picks. We commit them to a public repository — so the publish time is independently verifiable.</p></div>
+      <div class="step"><div class="n">02 · AFTER</div><h3>Scored honestly</h3><p>Once the numbers are drawn, every pick is matched against them and added to the receipts above. Hits and misses, all of it.</p></div>
+      <div class="step"><div class="n">03 · IN THE APP</div><h3>Your own picks</h3><p>Download PowerPlayAI to generate unlimited picks, scan tickets, and track your own results. <a href="../powerplayai-proof.html">See the methodology →</a></p></div>
+    </div>
+  </section>
+
+  <div class="final reveal-load">
+    <h2>Your numbers, before the next draw.</h2>
+    <p>Free to download. Generate AI picks for Powerball, Mega Millions, and EuroMillions in seconds.</p>
+    <a class="big-btn" id="finalCta" href="#">Download PowerPlayAI — free</a>
+  </div>
+
+  <footer>
+    <p class="disc">For entertainment only. Lottery outcomes are random; no app or model can change the odds of any drawing or guarantee a prize. Past performance of these picks does not predict future results. PowerPlayAI is an independent app and is not affiliated with, endorsed by, or sponsored by Powerball, Mega Millions, MUSL, or any lottery operator.</p>
+    <p>© PowerPlayAI · <a href="../powerplayai.html">About</a> · <a href="../powerplayai-proof.html">Proof &amp; methodology</a> · <a href="../powerplayai-dashboard/">Community results</a></p>
+  </footer>
+
+</div>
+
+<script>
+const APP_URL = "https://apps.apple.com/app/id6737205069?ct=freepick";
+const REPO_HISTORY = "https://github.com/colsonrice/colsonrice.github.io/commits/main/powerplayai-picks/current.json";
+const GAMES = {
+  powerball:    { name: "Powerball",     badge: "PB", color: "#e4342b" },
+  megaMillions: { name: "Mega Millions", badge: "MB", color: "#f5b301" },
+};
+document.getElementById('navCta').href = APP_URL;
+document.getElementById('finalCta').href = APP_URL;
+
+const fmtDate = s => { try { return new Date(s+"T12:00:00Z").toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'}); } catch { return s; } };
+const fmtStamp = s => { try { return new Date(s).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}); } catch { return s; } };
+
+function ballEl(n, isSpecial, color, matched, delay) {
+  const b = document.createElement('div');
+  b.className = 'ball' + (isSpecial ? ' special' : '') + (matched ? ' matched' : '');
+  if (isSpecial) b.style.setProperty('--game', color);
+  b.style.animationDelay = (delay||0)+'s';
+  b.textContent = n;
+  return b;
+}
+function ballRow(nums, color, matchedIdx) {
+  const row = document.createElement('div'); row.className = 'balls';
+  nums.forEach((n,i) => row.appendChild(ballEl(n, i===nums.length-1, color, matchedIdx && matchedIdx.has(i), i*0.04)));
+  return row;
+}
+
+async function load() {
+  let current = null, archive = [];
+  try { current = await (await fetch('current.json?cb='+Date.now())).json(); } catch (e) {}
+  try { archive = await (await fetch('archive.json?cb='+Date.now())).json(); } catch (e) {}
+  renderToday(current);
+  renderArchive(archive);
+}
+
+function renderToday(data) {
+  const host = document.getElementById('draws');
+  if (!data || !data.games) { host.innerHTML = '<div class="empty"><p>Picks are being prepared for the next draw. Check back shortly.</p></div>'; return; }
+  host.innerHTML = '';
+  Object.entries(data.games).forEach(([key, g]) => {
+    const meta = GAMES[key]; if (!meta) return;
+    const card = document.createElement('div'); card.className = 'draw-card reveal-load'; card.style.setProperty('--game', meta.color);
+    const [free, ...locked] = g.picks;
+
+    const top = document.createElement('div'); top.className = 'draw-top';
+    top.innerHTML = `<span class="game-name">${meta.name}</span><span class="game-badge">${meta.badge}</span>`;
+    card.appendChild(top);
+    const when = document.createElement('div'); when.className = 'draw-when';
+    when.innerHTML = `Next draw · <b>${fmtDate(g.nextDraw)}</b>`;
+    card.appendChild(when);
+
+    const freeRow = document.createElement('div'); freeRow.className = 'pick free';
+    freeRow.innerHTML = '<span class="pick-tag">Free pick</span>';
+    freeRow.appendChild(ballRow(free, meta.color));
+    card.appendChild(freeRow);
+
+    const lw = document.createElement('div'); lw.className = 'locked-wrap';
+    const lr = document.createElement('div'); lr.className = 'locked-rows';
+    locked.forEach(p => { const row = document.createElement('div'); row.className = 'pick'; row.appendChild(ballRow(p, meta.color)); lr.appendChild(row); });
+    lw.appendChild(lr);
+    const cta = document.createElement('div'); cta.className = 'lock-cta';
+    cta.innerHTML = `<div class="locknum">${locked.length} more picks</div><div class="locksub">Revealed here after the draw — or get your own now.</div><a class="lock-btn" href="${APP_URL}">Download free</a>`;
+    lw.appendChild(cta);
+    card.appendChild(lw);
+
+    const proof = document.createElement('div'); proof.className = 'proof';
+    proof.innerHTML = `<span class="stamp">Published</span> ${data.generatedAt ? fmtStamp(data.generatedAt) : ''} · before the draw · <a href="${REPO_HISTORY}" target="_blank" rel="noopener">verify ↗</a>`;
+    card.appendChild(proof);
+    host.appendChild(card);
+  });
+}
+
+function renderArchive(archive) {
+  const host = document.getElementById('archive');
+  if (!Array.isArray(archive) || archive.length === 0) {
+    host.innerHTML = `<div class="empty reveal-load"><div class="big">The first receipts are on their way.</div><p>House picks published today go up against tonight's and this week's draws. Verified results — wins and misses — appear here right after. This page only ever grows.</p></div>`;
+    return;
+  }
+  host.innerHTML = '';
+  archive.slice().reverse().forEach(r => {
+    const meta = GAMES[r.game] || { name: r.game, color: 'var(--accent)' };
+    const win = new Set((r.winning||[]).slice(0,5));
+    const winSpecial = (r.winning||[])[5];
+    const card = document.createElement('div'); card.className = 'receipt';
+    const top = document.createElement('div'); top.className = 'receipt-top';
+    top.innerHTML = `<span class="receipt-game"><b>${meta.name}</b> · ${fmtDate(r.drawDate)}</span>`;
+    const winLbl = document.createElement('div');
+    winLbl.innerHTML = '<div class="winning-lbl">Winning numbers</div>';
+    winLbl.appendChild(ballRow(r.winning||[], meta.color));
+    top.appendChild(winLbl);
+    card.appendChild(top);
+    (r.picks||[]).forEach(p => {
+      const row = document.createElement('div'); row.className = 'receipt-pick';
+      const matched = new Set(); let mainHits = 0;
+      p.slice(0,5).forEach((n,i)=>{ if (win.has(n)) { matched.add(i); mainHits++; } });
+      const specialHit = p[5] === winSpecial; if (specialHit) matched.add(5);
+      row.appendChild(ballRow(p, meta.color, matched));
+      const badge = document.createElement('span');
+      const hit = mainHits>0 || specialHit;
+      badge.className = 'match-badge ' + (hit ? 'hit' : 'miss');
+      badge.textContent = hit ? `${mainHits} match${mainHits===1?'':'es'}${specialHit?' + '+meta.badge:''}` : 'no match';
+      row.appendChild(badge);
+      card.appendChild(row);
+    });
+    host.appendChild(card);
+  });
+}
+
+load();
+</script>
+</body>
+</html>
