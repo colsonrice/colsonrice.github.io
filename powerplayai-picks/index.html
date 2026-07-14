@@ -292,8 +292,9 @@ function renderToday(data) {
     lw.appendChild(cta);
     card.appendChild(lw);
 
+    const stampTime = g.publishedAt || data.generatedAt;
     const proof = document.createElement('div'); proof.className = 'proof';
-    proof.innerHTML = `<span class="stamp">Published</span> ${data.generatedAt ? fmtStamp(data.generatedAt) : ''} · before the draw · <a href="${REPO_HISTORY}" target="_blank" rel="noopener">verify ↗</a>`;
+    proof.innerHTML = `<span class="stamp">Published</span> ${stampTime ? fmtStamp(stampTime) : ''} · before the draw · <a href="${REPO_HISTORY}" target="_blank" rel="noopener">verify ↗</a>`;
     card.appendChild(proof);
     host.appendChild(card);
   });
