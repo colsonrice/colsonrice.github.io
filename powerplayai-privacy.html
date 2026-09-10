@@ -30,43 +30,60 @@
           <span class="eyebrow">PowerPlayAI · Privacy Policy</span>
         </div>
         <h2>Power Play AI - Privacy Policy</h2>
-      <p><em>Effective Date: February 12, 2026</em></p>
+      <p><em>Effective Date: September 10, 2026</em> (replaces the February 12, 2026 policy)</p>
 
-      <h3>Introduction</h3>
-      <p>Welcome to Power Play AI. We respect your privacy and are committed to transparency in our data practices. This policy explains how the app handles data, including what information is accessed and how it is used.</p>
+      <h3>The short version</h3>
+      <p>Power Play AI has no accounts, no ads, and sells nothing about you. The prediction models run on your phone. The app does send a small amount of <strong>anonymous</strong> data to our own server so we can publish community results and fix what breaks, and if you choose to scan a paper ticket the photo is read by a third-party AI service. You can turn the usage analytics off in Settings at any time. This page lists exactly what leaves your device and why.</p>
 
-      <h3>No Collection of Personal Data</h3>
-      <p>Power Play AI does not request, capture, or store any personally identifiable information (such as your name, email address, or account credentials). We do not record usage data, location data, or device identifiers. No analytics or tracking frameworks are used.</p>
-
-      <h3>AI and Prediction Features</h3>
-      <p>All AI-based prediction models within Power Play AI operate entirely on your device. Neural network training, prediction generation, and all mathematical computations are performed locally using Apple's Accelerate framework. <strong>No personal data, prediction results, or usage information is ever transmitted to any server.</strong></p>
-
-      <h3>Data Downloaded by the App</h3>
-      <p>The app downloads the following types of data from external sources to provide its features. In all cases, the app only <em>receives</em> data, it does not send any personal or user-generated data to these sources:</p>
+      <h3>What the app collects, and why</h3>
       <ul>
-        <li><strong>Lottery Draw Results:</strong> Historical and recent lottery draw results are fetched from public government data sources (such as data.ny.gov) and supplementary data providers to display winning numbers and verify past predictions.</li>
-        <li><strong>Jackpot Information:</strong> Current jackpot amounts are retrieved from publicly available lottery websites to display up-to-date prize information.</li>
-        <li><strong>Quantum Random Data (Quantum Model only):</strong> The Quantum Model downloads pre-generated quantum random bit data for use as a randomness source in predictions. This data consists solely of random numbers (0s and 1s) generated from quantum physics experiments. No personal data is sent in these requests, and the downloaded random data is cached locally on your device. All prediction processing using this data happens entirely on your device.</li>
+        <li><strong>An anonymous install identifier.</strong> A one-way hash (SHA-256) of the identifier Apple assigns to this app on your device. It is not your name, email, phone number, Apple ID, advertising identifier, or anything that identifies you to us or to anyone else. We use it only to count active installs and subscribers and to avoid counting the same result twice. Our server forgets it after 90 days without activity.</li>
+        <li><strong>Coarse facts about the install.</strong> App version, iOS major version, whether the app came from the App Store or TestFlight, the app language you chose, your region (US games or EuroMillions), your App Store storefront country, a coarse device generation, and your time-zone offset. Never a precise location, device name, or serial number.</li>
+        <li><strong>Subscription state.</strong> Whether the Enhanced subscription is active, expired, in a billing grace period, or refunded — so we can see how the product performs. Never card or payment details; Apple handles all payments and we never see them.</li>
+        <li><strong>Anonymous usage counters.</strong> Events such as "opened the model sheet," "generated a forecast," "revealed a result," "shared a card," "turned notifications on or off," and whether a data source we depend on loaded or failed. Each event carries only short, fixed category values (for example the lottery, a jackpot size band, or the screen name). Events never contain free text, your ticket numbers, or the numbers on a scanned ticket.</li>
+        <li><strong>Scored forecasts (the community record).</strong> When a draw resolves, the app reports each forecast it generated together with the winning numbers and how many matched, plus one random "control" line generated alongside each forecast for comparison. These rows are anonymous and are the source of the public Community Results page. They are published only as aggregates.</li>
+        <li><strong>Ticket-pack summaries.</strong> For a saved ticket pack, how its lines did as a distribution (how many matched 0, 1, 2 … numbers) and the pack's size and cost — not the lines themselves.</li>
+        <li><strong>Scanned-ticket outcomes.</strong> If you check a scanned or typed ticket, the app reports how many numbers matched — never the numbers.</li>
+        <li><strong>Crash and performance signals.</strong> Counts of crashes, hangs, slow launches, and high memory use, as reported by Apple's MetricKit. No stack traces or personal data.</li>
       </ul>
 
-      <h3>No Data Sharing</h3>
-      <p>Power Play AI does not share any data with third parties. The app does not contain advertising, analytics, or tracking SDKs. No user data is sold, shared, or transferred to any third party for any purpose.</p>
+      <h3>Ticket scanning</h3>
+      <p>Reading the numbers off a paper ticket is done by a third-party AI service (OpenAI's image models). When you scan a ticket, the photo is sent through our server to that service, the numbers come back, and the photo is not stored by us. The photo is sent only when you tap Scan; nothing is read from your photo library or camera otherwise. Scans are limited per device per day to keep the service fair. You can always type a ticket in instead of scanning it.</p>
 
-      <h3>On-Device Processing</h3>
-      <p>All prediction models, including the Base Model, Enhanced Model, Random Balanced Model, and Quantum Model, perform their computations entirely on your device. The Quantum Model downloads pre-generated random data to your device and then processes it locally; no prediction logic runs on any external server.</p>
+      <h3>Your controls</h3>
+      <ul>
+        <li><strong>Turn analytics off.</strong> Settings → Privacy &amp; responsible play → "Share anonymous usage data." When it is off the app sends no install identifier and no usage counters. Scored forecasts still contribute to the community record, without any identifier attached.</li>
+        <li><strong>Delete.</strong> Deleting the app removes everything stored on your device. Because the data we hold is anonymous, we cannot look up or delete "your" rows on request — there is nothing that links them to you.</li>
+        <li><strong>Notifications, camera, and location</strong> are each controlled by iOS permissions you can change at any time in Settings. If you use "Auto-detect my state" to find your state lottery, the app reads your location once, keeps only the state code, and discards the coordinates immediately.</li>
+      </ul>
+
+      <h3>Data we download</h3>
+      <p>The app fetches public lottery draw results and jackpot amounts (from sources such as data.ny.gov and the lotteries' own sites), our own history and configuration files, and — for the Quantum model — pre-generated quantum random data. These requests carry no personal data.</p>
+
+      <h3>Retention</h3>
+      <p>Anonymous install rows expire after 90 days of inactivity. Usage counters and community results are kept as aggregates indefinitely, because they are the published track record. Ticket photos are not retained by us.</p>
+
+      <h3>Third parties</h3>
+      <p>Our server runs on Cloudflare. Ticket scanning uses OpenAI. Payments, subscriptions, and App Store analytics are handled by Apple under Apple's privacy terms. We do not use advertising or tracking SDKs, we do not track you across other apps or websites, and we do not sell, rent, or share data with data brokers.</p>
+
+      <h3>What we do not do</h3>
+      <ul>
+        <li>No accounts, names, emails, or contacts.</li>
+        <li>No advertising, no ad identifiers, no cross-app tracking.</li>
+        <li>No precise location, no reading of your photo library, no reading of your clipboard.</li>
+        <li>No storage of ticket photos or scanned numbers on our servers.</li>
+        <li>No sale or sharing of data with third parties for their own purposes.</li>
+      </ul>
 
       <h3>Children's Privacy</h3>
-      <p>Since we do not collect any personal data, Power Play AI is suitable for users of all ages. However, parental or guardian supervision is recommended for younger users.</p>
-
-      <h3>Data Security</h3>
-      <p>The app is designed so that no user data is stored on or transmitted to remote servers, minimizing the risk of data breaches or unauthorized access. All predictions and app data remain on your device.</p>
+      <p>Power Play AI is intended for adults who can legally play the lottery where they live. We do not knowingly collect any personal information from children.</p>
 
       <h3>Changes to This Policy</h3>
-      <p>If we ever modify our practices (for example, by adding optional features that involve data collection), we will update this Privacy Policy accordingly and notify users within the app.</p>
+      <p>When our practices change, we update this page and the effective date, and describe the change inside the app. The previous version of this policy stated that nothing was transmitted; that stopped being accurate when the community results feature was added, and this version corrects it.</p>
 
       <h3>Contact Us</h3>
       <p>If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:hello@squatchcraft.com">hello@squatchcraft.com</a>.</p>
-      
+
       <p><a href="powerplayai.html">← Back to Power Play AI</a></p>
         <hr>
         <p><a href="powerplayai.html">&larr; Back to PowerPlayAI</a></p>
