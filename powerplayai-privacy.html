@@ -30,7 +30,7 @@
           <span class="eyebrow">PowerPlayAI · Privacy Policy</span>
         </div>
         <h2>Power Play AI - Privacy Policy</h2>
-      <p><em>Effective Date: September 10, 2026</em> (replaces the February 12, 2026 policy)</p>
+      <p><em>Effective Date: September 17, 2026</em> (replaces the September 10, 2026 policy)</p>
 
       <h3>The short version</h3>
       <p>Power Play AI has no accounts, no ads, and sells nothing about you. The prediction models run on your phone. The app does send a small amount of <strong>anonymous</strong> data to our own server so we can publish community results and fix what breaks, and if you choose to scan a paper ticket the photo is read by a third-party AI service. You can turn the usage analytics off in Settings at any time. This page lists exactly what leaves your device and why.</p>
@@ -47,6 +47,10 @@
         <li><strong>Crash and performance signals.</strong> Counts of crashes, hangs, slow launches, and high memory use, as reported by Apple's MetricKit. No stack traces or personal data.</li>
       </ul>
 
+      <h3>Subscription records from Apple</h3>
+      <p>Apple sends our server signed subscription notifications, such as purchases, renewals, expirations and refunds. To avoid counting the same subscription or notification twice, we store one-way hashes of Apple's transaction and notification identifiers, together with the product, expiry date, renewal state and event date. Raw transaction identifiers and signed payloads are not retained. These records are not linked to the app's install identifier or usage history, and individual identifiers are never published. We also use Apple's daily aggregate reports to count paid subscriptions separately from devices.</p>
+      <p>Apple subscription accounting continues independently of the app's optional usage analytics. We do not send usage or consumption information to Apple in response to refund-review requests.</p>
+
       <h3>Ticket scanning</h3>
       <p>Reading the numbers off a paper ticket is done by a third-party AI service (OpenAI's image models). When you scan a ticket, the photo is sent through our server to that service, the numbers come back, and the photo is not stored by us. The photo is sent only when you tap Scan; nothing is read from your photo library or camera otherwise. Scans are limited per device per day to keep the service fair. You can always type a ticket in instead of scanning it.</p>
 
@@ -61,7 +65,7 @@
       <p>The app fetches public lottery draw results and jackpot amounts (from sources such as data.ny.gov and the lotteries' own sites), our own history and configuration files, and — for the Quantum model — pre-generated quantum random data. These requests carry no personal data.</p>
 
       <h3>Retention</h3>
-      <p>Anonymous install rows expire after 90 days of inactivity. Usage counters and community results are kept as aggregates indefinitely, because they are the published track record. Ticket photos are not retained by us.</p>
+      <p>Anonymous install rows expire after 90 days of inactivity. Usage counters and community results are kept as aggregates indefinitely, because they are the published track record. Apple notification records are retained for up to 365 days. A hashed subscription record is removed after its expiry, grace period and most recent notification are all more than 365 days old. Daily Apple subscription snapshots are retained for up to 365 days. Ticket photos are not retained by us.</p>
 
       <h3>Third parties</h3>
       <p>Our server runs on Cloudflare. Ticket scanning uses OpenAI. Payments, subscriptions, and App Store analytics are handled by Apple under Apple's privacy terms. We do not use advertising or tracking SDKs, we do not track you across other apps or websites, and we do not sell, rent, or share data with data brokers.</p>
