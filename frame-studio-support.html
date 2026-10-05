@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frame Studio — Support | SquatchCraft</title>
+  <meta name="description" content="Frame Studio support: museum art and your photos, prepared for Samsung The Frame.">
+  <link rel="canonical" href="https://www.squatchcraft.com/frame-studio-support.html">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/favicon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-app="humbly">
+  <nav class="nav"><div class="nav-inner">
+    <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
+    <ul class="nav-links">
+      <li><a href="index.html#apps">Apps</a></li>
+      <li><a href="frame-studio-support.html">Support</a></li>
+      <li><a href="frame-studio-privacy.html">Privacy</a></li>
+      <li><a href="frame-studio.html" class="nav-cta">Frame Studio</a></li>
+    </ul>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+  </div></nav>
+  <main><section class="shell" style="padding-top:60px;"><div class="prose">
+    <span class="eyebrow">Frame Studio · Support</span>
+    <h1 style="font-size:clamp(2.2rem,6vw,3.5rem);margin:24px 0;">Support</h1>
+
+    <p>Need a hand? Email <a href="mailto:hello@squatchcraft.com?subject=Frame%20Studio%20support">hello@squatchcraft.com</a>. Include the app version, TV model, firmware version, and the exact error or step that failed. Please do not send pairing tokens, your Wi-Fi password, or private photos.</p>
+    <h2>Connect once, then send art</h2>
+    <ol><li>Turn on your Frame and put your iPhone or iPad on the same home network. Guest Wi-Fi, device isolation, and some VPNs prevent local connections.</li><li>In <strong>My Frame → TV settings</strong>, enter the TV’s IP address. Find it in the TV’s network settings. Accept <strong>Allow</strong> when the TV asks to connect.</li><li>Allow Frame Studio under <strong>Settings → Privacy &amp; Security → Local Network</strong> on your iPhone or iPad.</li><li>Choose art or a photo, check the crop, and send it. The app remembers the address and pairing and reconnects for subsequent actions. If your router changes the TV’s address, update it in TV settings; a router DHCP reservation can keep it stable.</li></ol>
+    <p>Secure port 8002 is the default. The connection screen offers port 8001 for older firmware. Use this only on your trusted home network.</p>
+    <h2>Will my Frame work?</h2>
+    <p><strong>Our best estimate is that direct artwork upload should work on most Samsung The Frame TVs that expose the local Art Mode API.</strong> We do not claim verified support for every model or firmware. A paired connection does not by itself establish upload, brightness, or slideshow support.</p>
+    <ul><li><strong>2022 50-inch QN50LS03BAFXZA:</strong> direct upload, no-mat display, repeat sends with reconnect, and brightness have been exercised on our physical TV. Firmware changes can still affect behavior.</li><li><strong>2017–2019 / Art APIs 0.97 and 1.07:</strong> the app includes the older binary WebSocket upload format, based on SmartThings protocol captures and working owner reports. This path is covered by simulated protocol tests, not our own hardware test.</li><li><strong>Other Frames using the modern D2D transfer:</strong> the app handles both encrypted and unencrypted transfers and alternate response formats. We expect broad compatibility with this protocol family; feature support is determined by the TV’s responses.</li><li><strong>32-inch variants, Frame Pro, and the newest firmware:</strong> confidence is lower without matching hardware reports. Image preparation and export remain available if direct controls are rejected. Full HD output is available for 32-inch Full HD models; use Check TV and verify your model’s specifications.</li></ul>
+    <p>We test protocol families and failure cases rather than assuming all TVs with the same year share the same software. See the <a href="https://github.com/xchwarze/samsung-tv-ws-api/pull/181">community legacy-protocol fix and owner confirmations</a> and a <a href="https://github.com/kohlerryan/samsung-tv-art-uploader/issues/10">2017 model owner’s successful binary upload tests</a>. Samsung can change its local API; this is not a manufacturer certification.</p>
+    <h2>No border, the right crop</h2>
+    <p>In Help &amp; compatibility, choose 4K (3840 × 2160) or Full HD (1920 × 1080), or the corresponding portrait format for a vertically mounted TV. Exports contain no added canvas. The app requests No Mat and checks the TV’s confirmation. Cropping can remove part of a composition, so review the preview. “Upscaled” means the source has fewer pixels than the chosen output.</p>
+    <h2>Brightness and image darkening</h2>
+    <p>TV brightness adjusts the display hardware. Image darkening changes the picture itself and is separate from color filters. Use the darkening control beside brightness, then apply it to the last image sent from this app. For a playlist, update the playlist to regenerate its images. The app does not change the TV’s motion sensor, ambient-light sensor, or sleep settings.</p>
+    <h2>Playlists that keep going</h2>
+    <p><strong>On the TV</strong> runs independently only when the TV accepts and confirms the slideshow configuration. <strong>With this iPhone</strong> is the alternative when firmware rejects that feature; it requires the app to stay open and the phone awake. Locking the phone or leaving the app pauses phone-assisted rotation. The app cannot promise all-day background execution on iOS.</p>
+    <h2>Socket disconnected or request rejected</h2>
+    <p>Check that the TV is on, the saved IP is current, and Local Network access is allowed. Try the action again; pairing is retained. If the TV rejects an upload, check free storage in its Art Mode library and update the TV’s software. A code such as −7 indicates rejected parameters, not necessarily a failed pairing. Send support the exact operation and code if it continues.</p>
+    <p>If the screen goes dark, check the TV’s own Art Mode sleep, Night Mode, and motion-detection settings and whether its sensors are covered. Those settings remain under your control.</p>
+    <h2>Export without a direct connection</h2>
+    <ol><li>Open an artwork or photo and choose <strong>Export image</strong>. Save the JPEG to Photos or Files.</li><li>Import it through your Frame’s SmartThings Art Mode photo option, or transfer it using USB if supported by the TV.</li><li>Choose <strong>No Mat</strong> on the TV. Menu names and available mat options vary.</li></ol>
+    <p><a href="https://www.samsung.com/us/support/answer/ANS10005224/">Samsung’s photo import instructions</a></p>
+    <h2>Missing a painting?</h2>
+    <p>We include museum images with reusable source rights and quality information. Some famous works, including Nighthawks, are not currently offered because we have not cleared a reusable image for the catalog. You can import your own copy if you have permission to use it. Tell us what you would like to see added.</p>
+    <p><small>Compatibility assessment updated October 5, 2026. Independent of Samsung and the museums.</small></p>
+
+    <hr><p><a href="frame-studio.html">Frame Studio</a> · <a href="frame-studio-support.html">Support</a> · <a href="frame-studio-privacy.html">Privacy policy</a></p>
+  </div></section></main>
+  <footer class="footer"><div class="shell footer-bottom">
+    <a class="brand" href="index.html"><span class="dot"></span>SquatchCraft</a>
+    <span>&copy; 2026 SquatchCraft LLC. All rights reserved.</span>
+  </div></footer>
+  <script src="script.js"></script>
+</body></html>
