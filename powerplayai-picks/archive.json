@@ -1064,5 +1064,81 @@
         "specialMatch": false
       }
     ]
+  },
+  {
+    "game": "powerball",
+    "drawDate": "2026-10-24",
+    "winning": [
+      4,
+      5,
+      15,
+      19,
+      55,
+      19
+    ],
+    "picks": [
+      [
+        20,
+        25,
+        43,
+        55,
+        63,
+        23
+      ],
+      [
+        18,
+        20,
+        36,
+        45,
+        49,
+        6
+      ],
+      [
+        3,
+        6,
+        12,
+        15,
+        68,
+        6
+      ],
+      [
+        26,
+        29,
+        36,
+        55,
+        62,
+        24
+      ],
+      [
+        19,
+        39,
+        40,
+        45,
+        56,
+        3
+      ]
+    ],
+    "results": [
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      }
+    ]
   }
 ]
