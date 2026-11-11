@@ -1900,5 +1900,157 @@
         "specialMatch": false
       }
     ]
+  },
+  {
+    "game": "megaMillions",
+    "drawDate": "2026-11-10",
+    "winning": [
+      2,
+      18,
+      25,
+      30,
+      65,
+      22
+    ],
+    "picks": [
+      [
+        40,
+        46,
+        50,
+        60,
+        63,
+        6
+      ],
+      [
+        24,
+        35,
+        49,
+        56,
+        66,
+        10
+      ],
+      [
+        26,
+        39,
+        52,
+        58,
+        65,
+        12
+      ],
+      [
+        18,
+        19,
+        37,
+        39,
+        55,
+        16
+      ],
+      [
+        1,
+        8,
+        11,
+        65,
+        69,
+        12
+      ]
+    ],
+    "results": [
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      }
+    ]
+  },
+  {
+    "game": "powerball",
+    "drawDate": "2026-11-09",
+    "winning": [
+      13,
+      34,
+      41,
+      45,
+      48,
+      25
+    ],
+    "picks": [
+      [
+        22,
+        33,
+        44,
+        59,
+        68,
+        23
+      ],
+      [
+        13,
+        17,
+        31,
+        44,
+        59,
+        23
+      ],
+      [
+        24,
+        43,
+        58,
+        62,
+        69,
+        8
+      ],
+      [
+        39,
+        40,
+        45,
+        48,
+        58,
+        20
+      ],
+      [
+        20,
+        24,
+        40,
+        43,
+        69,
+        23
+      ]
+    ],
+    "results": [
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 2,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      }
+    ]
   }
 ]
