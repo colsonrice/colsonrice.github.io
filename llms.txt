@@ -7,7 +7,7 @@
 - [Powerball number generator](https://www.squatchcraft.com/powerball-number-generator/): 5 of 1-69 plus 1 Powerball of 1-26
 - [Mega Millions number generator](https://www.squatchcraft.com/mega-millions-number-generator/): 5 of 1-70 plus 1 Mega Ball of 1-24
 - [EuroMillions number generator](https://www.squatchcraft.com/euromillions-number-generator/): 5 of 1-50 plus 2 Lucky Stars of 1-12
-- [Can AI predict lottery numbers?](https://www.squatchcraft.com/can-ai-predict-lottery-numbers/): the honest answer (no) and what an AI number picker can do instead
+- [Can AI predict lottery numbers?](https://www.squatchcraft.com/can-ai-predict-lottery-numbers/): a live public experiment. In theory no, because draws are random; the page shows the running count of how often lines made by the app's Enhanced model matched at least one main number, against random picks and pure chance. Matching one number is not a prize and the result may be luck
 - [Published picks](https://www.squatchcraft.com/powerplayai-picks/): house picks posted before every Powerball and Mega Millions draw and scored afterwards
 - [Community results](https://www.squatchcraft.com/powerplayai-dashboard/): how lines made in the app have done
 - [Privacy policy](https://www.squatchcraft.com/powerplayai-privacy.html)

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Can AI Predict Lottery Numbers? An honest answer | PowerPlayAI</title>
-<meta name="description" content="No. Lottery draws are random and independent, so no AI, app or chatbot can know the next numbers. Here is what an AI number picker can honestly do, and how to judge one.">
+<title>Can AI Predict Lottery Numbers? Our live experiment | PowerPlayAI</title>
+<meta name="description" content="Every draw is random, so in theory no. We test it anyway: every pick the Enhanced model makes in PowerPlayAI is checked against the real draw. See the running count against random.">
 <link rel="canonical" href="https://www.squatchcraft.com/can-ai-predict-lottery-numbers/">
 <meta name="apple-itunes-app" content="app-id=6737205069">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PowerPlayAI">
-<meta property="og:title" content="Can AI Predict Lottery Numbers? An honest answer | PowerPlayAI">
-<meta property="og:description" content="No. Lottery draws are random and independent, so no AI, app or chatbot can know the next numbers. Here is what an AI number picker can honestly do, and how to judge one.">
+<meta property="og:title" content="Can AI Predict Lottery Numbers? Our live experiment | PowerPlayAI">
+<meta property="og:description" content="Every draw is random, so in theory no. We test it anyway: every pick the Enhanced model makes in PowerPlayAI is checked against the real draw. See the running count against random.">
 <meta property="og:url" content="https://www.squatchcraft.com/can-ai-predict-lottery-numbers/">
 <meta property="og:image" content="https://www.squatchcraft.com/assets/icons/powerplayai.png">
 <meta name="twitter:card" content="summary">
@@ -112,6 +112,18 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
 .answer{margin-top:22px;padding:22px 24px;border:1px solid color-mix(in srgb,var(--gold) 45%,var(--border));border-radius:18px;background:color-mix(in srgb,var(--gold) 6%,var(--surface))}
 .answer p{color:var(--ink);font-size:1.08rem;max-width:62ch}
 
+.scores{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:18px}
+.score{position:relative;background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--border);border-radius:20px;padding:22px;overflow:hidden}
+.score::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,transparent,var(--game),transparent);opacity:.85}
+.score-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;margin-bottom:14px}
+.row .lbl{font-size:.86rem;color:var(--muted)}
+.row .val{font-family:var(--mono);font-size:1.05rem;font-variant-numeric:tabular-nums;color:var(--ink);grid-row:1;grid-column:2}
+.row .track{grid-column:1/-1;height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.row .fill{display:block;height:100%;border-radius:99px;background:var(--faint);transition:width .6s ease}
+.row .fill.enh{background:var(--gold);box-shadow:0 0 12px var(--gold-glow)}
+.row:first-of-type .val{color:var(--gold);font-size:1.5rem;font-weight:600}
+.score-n{font-family:var(--mono);font-size:.72rem;color:var(--faint);margin-top:4px}
 /* faq + final + footer */
 .faq details{border-top:1px solid var(--border);padding:16px 0}
 .faq details:last-child{border-bottom:1px solid var(--border)}
@@ -128,7 +140,7 @@ footer .disc{max-width:70ch;margin-bottom:12px;line-height:1.6}
 footer a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PowerPlayAI","operatingSystem":"iOS","applicationCategory":"UtilitiesApplication","description":"AI-powered lottery number generator for Powerball, Mega Millions and EuroMillions that saves every line and checks it against the real draw.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://apps.apple.com/app/id6737205069"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can ChatGPT predict lottery numbers?","acceptedAnswer":{"@type":"Answer","text":"No. A chatbot will happily give you numbers, and they have exactly the same chance as any other line. It has no information about a future draw, because no such information exists."}},{"@type":"Question","name":"Do hot numbers come up more often?","acceptedAnswer":{"@type":"Answer","text":"They came up more often in the past, which is all \"hot\" means. Each draw is independent, so past frequency tells you nothing about the next one. The app shows hot, cold and overdue numbers as history, not as a forecast."}},{"@type":"Question","name":"Then why use an AI number generator at all?","acceptedAnswer":{"@type":"Answer","text":"For the same reason people choose their own numbers: it is more fun than a slip from the till. A good one also saves every line, checks it against the draw for you and keeps the full record, misses included."}},{"@type":"Question","name":"Is there any honest way to judge a lottery app?","acceptedAnswer":{"@type":"Answer","text":"Yes: ask whether it publishes its picks before the draw and its results after, including the bad nights. Be wary of anything that promises prizes, sells \"predicted\" numbers or shows only its good results."}},{"@type":"Question","name":"Does PowerPlayAI publish its results?","acceptedAnswer":{"@type":"Answer","text":"Yes. House picks for Powerball and Mega Millions are published before every draw and scored after, and community results are public."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the Enhanced model ahead of random?","acceptedAnswer":{"@type":"Answer","text":"As of 12 November 2026, yes, on one measure: lines made by the Enhanced model have matched at least one main number more often than chance alone would give. The running count is at the top of this page. It may be luck, it is not a prize, and it says nothing about any future draw."}},{"@type":"Question","name":"Does that mean an Enhanced line is more likely to pay out?","acceptedAnswer":{"@type":"Answer","text":"No. Matching one main number pays nothing, and the gap has not shown up as prize money. Every draw is random, and we make no claim about what any line will do next."}},{"@type":"Question","name":"Can ChatGPT predict lottery numbers?","acceptedAnswer":{"@type":"Answer","text":"A chatbot will give you numbers, and nobody has shown that they do any differently from chance. It also keeps no record. The point of this experiment is the record: every line is checked against the real draw and counted, good nights and bad."}},{"@type":"Question","name":"Do hot numbers come up more often?","acceptedAnswer":{"@type":"Answer","text":"They came up more often in the past, which is all \"hot\" means. Each draw is independent, so past frequency does not carry over to the next one. The app shows hot, cold and overdue numbers as history, not as a forecast."}},{"@type":"Question","name":"How do I know the count is honest?","acceptedAnswer":{"@type":"Answer","text":"Our house picks for Powerball and Mega Millions are published before every draw with a timestamp anyone can check, and the community results are public, the losing nights included. Nothing is removed when a night goes badly."}}]}</script>
 </head>
 <body>
 <div class="wrap">
@@ -141,44 +153,61 @@ footer a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
     </div>
   </nav>
   <header class="hero">
-    <div class="eyebrow">A straight answer from people who make a lottery app</div>
-    <h1>Can AI predict lottery numbers? <em>No.</em></h1>
-    <p class="lead">Lottery draws are random and independent. No model, app or chatbot can know what comes next, and every line has the same chance. Here is what an AI number picker can honestly do instead.</p>
+    <div class="eyebrow">A live experiment · counted in public</div>
+    <h1>Can AI predict lottery numbers? <em>We're finding out.</em></h1>
+    <p class="lead">In theory, no: a fair draw is random. We are testing it anyway, in the open. Every line the app's Enhanced model makes is checked against the real draw, and the running count is right here, good nights and bad.</p>
   </header>
   <main>
 
-<div class="answer"><p><b>The short version:</b> nothing can predict a fair lottery draw. An AI model can choose numbers in a more interesting way than a quick pick, but the chance of any line matching is set by the game's rules, not by who picked it.</p></div>
-<h2>Why nothing can predict a draw</h2>
-<div class="prose">
-<p>A lottery machine has no memory. The balls drawn last week have no effect on the balls drawn tonight, so a number that has not appeared for months is not "due", and a number that appeared three times running is not "on a streak". Those are descriptions of the past.</p>
-<p>The size of the game does the rest. Powerball has 292,201,338 possible lines, Mega Millions 290,472,336 and EuroMillions 139,838,160. Each is equally likely in every drawing. A model would need information about the future to do better, and there is none to be had.</p>
+<h2 style="margin-top:18px">The experiment so far</h2>
+<div class="prose"><p>How often a line matched <b>at least one main number</b>, for every line people have made in the app and had checked against a real draw. As of 12 November 2026, the Enhanced model is ahead of random.</p></div>
+<div class="scores">
+<div class="score" data-score="powerball" data-chance="0.3215728806827024" style="--game:#e4342b">
+  <div class="score-top"><span class="gen-game">Powerball</span><span class="gen-rule">matched at least one main number</span></div>
+  <div class="row"><span class="lbl">Enhanced model</span><span class="track"><span class="fill enh" data-bar="enh" style="width:61.6%"></span></span><span class="val" data-val="enh">37.0%</span></div>
+  <div class="row"><span class="lbl">Random picks made in the app</span><span class="track"><span class="fill" data-bar="ctl" style="width:53.4%"></span></span><span class="val" data-val="ctl">32.0%</span></div>
+  <div class="row"><span class="lbl">Pure chance, by the maths</span><span class="track"><span class="fill" style="width:53.6%"></span></span><span class="val">32.2%</span></div>
+  <p class="score-n" data-n>2,468 of 6,676 Enhanced lines · 799 of 2,493 random lines</p>
 </div>
-<h2>What an AI number picker can honestly do</h2>
+<div class="score" data-score="megaMillions" data-chance="0.31753462402009947" style="--game:#f5b301">
+  <div class="score-top"><span class="gen-game">Mega Millions</span><span class="gen-rule">matched at least one main number</span></div>
+  <div class="row"><span class="lbl">Enhanced model</span><span class="track"><span class="fill enh" data-bar="enh" style="width:61.1%"></span></span><span class="val" data-val="enh">36.7%</span></div>
+  <div class="row"><span class="lbl">Random picks made in the app</span><span class="track"><span class="fill" data-bar="ctl" style="width:56.6%"></span></span><span class="val" data-val="ctl">34.0%</span></div>
+  <div class="row"><span class="lbl">Pure chance, by the maths</span><span class="track"><span class="fill" style="width:52.9%"></span></span><span class="val">31.8%</span></div>
+  <p class="score-n" data-n>835 of 2,276 Enhanced lines · 194 of 571 random lines</p>
+</div></div>
+<p class="note" style="border-top:0;padding-top:0" data-asof>Count as of 12 November 2026. It updates as draws are checked.</p>
+<h2>How to read those numbers</h2>
 <div class="steps">
-  <div class="step"><div class="n">01 · CHOOSE</div><h3>Make a line without human habits</h3><p>People lean on birthdays and tidy patterns. A model reads the game's history and shapes a line from it. That changes which numbers you hold, not how likely they are to come up.</p></div>
-  <div class="step"><div class="n">02 · SPREAD</div><h3>Cover more of the board</h3><p>If you play several lines, they can be built to repeat as few numbers as possible. That is arithmetic about coverage, not a forecast.</p></div>
-  <div class="step"><div class="n">03 · REMEMBER</div><h3>Keep an honest record</h3><p>Save every line, check it against the real draw, and keep the result, the misses as well. This is the part most number generators skip.</p></div>
+  <div class="step"><div class="n">01 · NOT A PRIZE</div><h3>One number pays nothing</h3><p>Matching a single main number is not a prize in either game, and the gap has not shown up as prize money. This measures the picks, not winnings.</p></div>
+  <div class="step"><div class="n">02 · NIGHTS, NOT LINES</div><h3>Lines rise and fall together</h3><p>Lines made for the same draw often share numbers, so one draw can lift or sink hundreds at once. A handful of very good nights carry much of the gap.</p></div>
+  <div class="step"><div class="n">03 · STILL OPEN</div><h3>It could be luck</h3><p>There have not been enough draws to tell luck from skill. That is why this is an experiment and not a claim. The count keeps running either way.</p></div>
 </div>
-<h2>How we hold ourselves to that</h2>
+<h2>Why the textbook answer is no</h2>
 <div class="prose">
-<p>We make PowerPlayAI, an AI-powered number generator for Powerball, Mega Millions and EuroMillions, so we have every reason to oversell it. Instead we publish. Our house picks go up on a <a href="/powerplayai-picks/">public page before each draw</a>, with a timestamp anyone can check, and are scored against the real numbers afterwards. The <a href="/powerplayai-dashboard/">community results</a> show how lines made in the app have done.</p>
-<p>Look at those before you decide what you think of it. If you only want numbers, the <a href="/ai-lottery-number-generator/">free generator</a> is one tap.</p>
+<p>A lottery machine has no memory. The balls drawn last week have no effect on the balls drawn tonight, so a number that has not appeared for months is not "due". Powerball has 292,201,338 possible lines and Mega Millions 290,472,336, and in a fair draw each is as likely as any other.</p>
+<p>That is the theory, and we think it deserves checking against real draws instead of being taken on trust in either direction. So the app keeps score, and we publish it.</p>
+</div>
+<h2>How we keep it honest</h2>
+<div class="prose">
+<p>We make PowerPlayAI, so we have every reason to oversell it. Instead we publish. Our house picks go up on a <a href="/powerplayai-picks/">public page before each draw</a>, with a timestamp anyone can check, and are scored against the real numbers afterwards. The <a href="/powerplayai-dashboard/">community results</a> show every model in the app side by side, including the free random one the Enhanced model is measured against.</p>
+<p>If the gap closes, this page will show that too.</p>
 </div>
 <h2>Signs a lottery "predictor" is not being straight with you</h2>
 <div class="prose">
 <ul>
-<li>It promises prizes, or says it has found a pattern in the draws.</li>
+<li>It promises prizes, or says it has cracked a pattern in the draws.</li>
 <li>It charges for "predicted" numbers.</li>
 <li>It shows its good nights and hides the rest.</li>
 <li>It never says the draw is random.</li>
 </ul>
 <p>Play for fun, with money you can afford to lose.</p>
 </div>
-<div class="app"><p><b>See it for yourself.</b> Make a line in PowerPlayAI before the next draw and open the sealed result afterwards.</p><a class="btn" href="https://apps.apple.com/app/id6737205069?ct=webcanai">Download PowerPlayAI, free</a></div>
-<h2>Questions people ask</h2><div class="faq"><details><summary>Can ChatGPT predict lottery numbers?</summary><p>No. A chatbot will happily give you numbers, and they have exactly the same chance as any other line. It has no information about a future draw, because no such information exists.</p></details><details><summary>Do hot numbers come up more often?</summary><p>They came up more often in the past, which is all "hot" means. Each draw is independent, so past frequency tells you nothing about the next one. The app shows hot, cold and overdue numbers as history, not as a forecast.</p></details><details><summary>Then why use an AI number generator at all?</summary><p>For the same reason people choose their own numbers: it is more fun than a slip from the till. A good one also saves every line, checks it against the draw for you and keeps the full record, misses included.</p></details><details><summary>Is there any honest way to judge a lottery app?</summary><p>Yes: ask whether it publishes its picks before the draw and its results after, including the bad nights. Be wary of anything that promises prizes, sells "predicted" numbers or shows only its good results.</p></details><details><summary>Does PowerPlayAI publish its results?</summary><p>Yes. House picks for Powerball and Mega Millions are <a href="/powerplayai-picks/">published before every draw</a> and scored after, and <a href="/powerplayai-dashboard/">community results</a> are public.</p></details></div>
+<div class="app"><p><b>Add your line to the count.</b> Make one in PowerPlayAI before the next draw and open the sealed result afterwards.</p><a class="btn" href="https://apps.apple.com/app/id6737205069?ct=webcanai">Download PowerPlayAI, free</a></div>
+<h2>Questions people ask</h2><div class="faq"><details><summary>Is the Enhanced model ahead of random?</summary><p>As of 12 November 2026, yes, on one measure: lines made by the Enhanced model have matched at least one main number more often than chance alone would give. The running count is at the top of this page. It may be luck, it is not a prize, and it says nothing about any future draw.</p></details><details><summary>Does that mean an Enhanced line is more likely to pay out?</summary><p>No. Matching one main number pays nothing, and the gap has not shown up as prize money. Every draw is random, and we make no claim about what any line will do next.</p></details><details><summary>Can ChatGPT predict lottery numbers?</summary><p>A chatbot will give you numbers, and nobody has shown that they do any differently from chance. It also keeps no record. The point of this experiment is the record: every line is checked against the real draw and counted, good nights and bad.</p></details><details><summary>Do hot numbers come up more often?</summary><p>They came up more often in the past, which is all "hot" means. Each draw is independent, so past frequency does not carry over to the next one. The app shows hot, cold and overdue numbers as history, not as a forecast.</p></details><details><summary>How do I know the count is honest?</summary><p>Our house picks for Powerball and Mega Millions are <a href="/powerplayai-picks/">published before every draw</a> with a timestamp anyone can check, and the <a href="/powerplayai-dashboard/">community results</a> are public, the losing nights included. Nothing is removed when a night goes badly.</p></details></div>
   <div class="final">
-    <h2>Judge it by the record.</h2>
-    <p>PowerPlayAI makes your numbers, saves them, checks the draw and keeps every result where you can see it. Free to download on iPhone.</p>
+    <h2>Join the experiment.</h2>
+    <p>Make a line in PowerPlayAI before the next draw. It is saved, checked against the real numbers, and added to the count. Free to download on iPhone.</p>
     <a class="btn" href="https://apps.apple.com/app/id6737205069?ct=webcanai">Download PowerPlayAI, free</a>
   </div>
   </main>
@@ -235,6 +264,27 @@ footer a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
     })});
     head();blank();
   });
+})();
+</script>
+<script>
+(function(){
+  var cards=document.querySelectorAll('[data-score]'); if(!cards.length||!window.fetch) return;
+  function f(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+  function t(m){var n=m&&m.totalPredictions||0,z=m&&m.matchDistribution?m.matchDistribution['0']:null;return n>0&&z!=null?{n:n,hit:n-z,rate:(n-z)/n}:null}
+  function p(x){return (x*100).toFixed(1)+'%'}
+  function w(x){return Math.min(100,x/0.6*100).toFixed(1)+'%'}
+  fetch("https://powerplayai-api.colsonrice.workers.dev/stats").then(function(r){return r.json()}).then(function(d){
+    cards.forEach(function(c){
+      var m=d.models&&d.models[c.getAttribute('data-score')]; if(!m) return;
+      var e=t(m.enhanced), k=t(m.randomBalanced); if(!e||e.n<200) return;
+      c.hidden=false;
+      c.querySelector('[data-val=enh]').textContent=p(e.rate); c.querySelector('[data-bar=enh]').style.width=w(e.rate);
+      if(k){c.querySelector('[data-val=ctl]').textContent=p(k.rate); c.querySelector('[data-bar=ctl]').style.width=w(k.rate)}
+      c.querySelector('[data-n]').textContent=f(e.hit)+' of '+f(e.n)+' Enhanced lines'+(k?' \u00b7 '+f(k.hit)+' of '+f(k.n)+' random lines':'');
+    });
+    var a=document.querySelector('[data-asof]');
+    if(a&&d.lastUpdated) a.textContent='Live count, updated '+new Date(d.lastUpdated).toLocaleString(undefined,{day:'numeric',month:'long',year:'numeric',hour:'numeric',minute:'2-digit'});
+  }).catch(function(){});
 })();
 </script>
 </body>

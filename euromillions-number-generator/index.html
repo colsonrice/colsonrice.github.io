@@ -112,6 +112,18 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
 .answer{margin-top:22px;padding:22px 24px;border:1px solid color-mix(in srgb,var(--gold) 45%,var(--border));border-radius:18px;background:color-mix(in srgb,var(--gold) 6%,var(--surface))}
 .answer p{color:var(--ink);font-size:1.08rem;max-width:62ch}
 
+.scores{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:18px}
+.score{position:relative;background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--border);border-radius:20px;padding:22px;overflow:hidden}
+.score::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,transparent,var(--game),transparent);opacity:.85}
+.score-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;margin-bottom:14px}
+.row .lbl{font-size:.86rem;color:var(--muted)}
+.row .val{font-family:var(--mono);font-size:1.05rem;font-variant-numeric:tabular-nums;color:var(--ink);grid-row:1;grid-column:2}
+.row .track{grid-column:1/-1;height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.row .fill{display:block;height:100%;border-radius:99px;background:var(--faint);transition:width .6s ease}
+.row .fill.enh{background:var(--gold);box-shadow:0 0 12px var(--gold-glow)}
+.row:first-of-type .val{color:var(--gold);font-size:1.5rem;font-weight:600}
+.score-n{font-family:var(--mono);font-size:.72rem;color:var(--faint);margin-top:4px}
 /* faq + final + footer */
 .faq details{border-top:1px solid var(--border);padding:16px 0}
 .faq details:last-child{border-bottom:1px solid var(--border)}
@@ -183,7 +195,7 @@ footer a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
 <h2>What "AI" means here, and what it does not</h2>
 <div class="prose">
 <p>The engines in the app read past draws on your phone and shape a line from them. That changes <b>which numbers you get</b>. It does not change the odds. Every drawing is random and independent, and every possible line is exactly as likely as every other, whoever or whatever chose it.</p>
-<p>So we do not ask you to take the picks on faith. Our house picks for Powerball and Mega Millions are <a href="/powerplayai-picks/">published before each draw and scored after it</a>, and the <a href="/powerplayai-dashboard/">community results</a> show how lines made in the app have done, on good nights and bad ones.</p>
+<p>So we do not ask you to take the picks on faith. Our house picks for Powerball and Mega Millions are <a href="/powerplayai-picks/">published before each draw and scored after it</a>, and the <a href="/powerplayai-dashboard/">community results</a> show how lines made in the app have done, on good nights and bad ones. Whether a model's picks match more often in practice is something we are <a href="/can-ai-predict-lottery-numbers/">testing in public</a>.</p>
 </div>
 <h2>Questions people ask</h2><div class="faq"><details><summary>How many numbers do I pick for EuroMillions?</summary><p>Five main numbers from 1 to 50 and two Lucky Stars from 1 to 12. The generator on this page follows those rules and never repeats a number within a line.</p></details><details><summary>When is EuroMillions drawn?</summary><p>EuroMillions is drawn every Tuesday and Friday. The PowerPlayAI app shows a countdown to the next draw and can remind you on draw night without giving away the result.</p></details><details><summary>Does a number generator change my chances in EuroMillions?</summary><p>No. There are 139,838,160 possible EuroMillions lines and each is equally likely in every drawing. A generator, an AI model and your own favourite numbers all have the same chance.</p></details><details><summary>Can I check my EuroMillions ticket?</summary><p>Yes, in the app: point the camera at the ticket or type the numbers in, and it compares each line with the draw.</p></details><details><summary>Is this the official lottery site?</summary><p>No. PowerPlayAI is an independent app and this page is not affiliated with EuroMillions or any lottery operator. Tickets are bought from official retailers.</p></details></div>
 <div class="prose" style="margin-top:28px"><p>More generators: <a href="/ai-lottery-number-generator/">all games</a> · <a href="/powerball-number-generator/">Powerball number generator</a> · <a href="/mega-millions-number-generator/">Mega Millions number generator</a></p></div>
