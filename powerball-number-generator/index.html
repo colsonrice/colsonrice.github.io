@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Powerball Number Generator: free random and AI picks | PowerPlayAI</title>
+<meta name="description" content="Generate Powerball numbers free: five from 1 to 69 plus one Powerball from 1 to 26. A random line here, or AI-powered picks saved and checked against the draw in the PowerPlayAI app.">
+<link rel="canonical" href="https://www.squatchcraft.com/powerball-number-generator/">
+<meta name="apple-itunes-app" content="app-id=6737205069">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PowerPlayAI">
+<meta property="og:title" content="Powerball Number Generator: free random and AI picks | PowerPlayAI">
+<meta property="og:description" content="Generate Powerball numbers free: five from 1 to 69 plus one Powerball from 1 to 26. A random line here, or AI-powered picks saved and checked against the draw in the PowerPlayAI app.">
+<meta property="og:url" content="https://www.squatchcraft.com/powerball-number-generator/">
+<meta property="og:image" content="https://www.squatchcraft.com/assets/icons/powerplayai.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/icons/favicon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,900&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08080d;--bg-2:#0d0d15;--surface:#14141f;--surface-2:#1b1b29;--border:#262636;--ink:#f2f1f7;--muted:#a3a3b8;--faint:#77778f;
+--accent:#8b7bff;--accent-glow:rgba(139,123,255,.45);--gold:#f2c14e;--gold-glow:rgba(242,193,78,.35);--green:#4ad991;--ball:#f4f1e6;--ball-ink:#14141f;--game:#8b7bff;
+--serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(60% 45% at 15% 0%,rgba(139,123,255,.14),transparent 60%),radial-gradient(50% 40% at 100% 15%,rgba(242,193,78,.08),transparent 55%),radial-gradient(70% 50% at 50% 110%,rgba(139,123,255,.10),transparent 60%)}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em;text-decoration:none}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent-glow)}
+.nav-links{display:flex;align-items:center;gap:18px;font-size:.9rem}
+.nav-links a.plain{color:var(--muted);text-decoration:none}
+.nav-links a.plain:hover{color:var(--ink)}
+@media(max-width:560px){.nav-links a.plain{display:none}}
+.nav-cta{font-weight:600;font-size:.9rem;padding:9px 18px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;white-space:nowrap}
+.hero{padding:44px 0 26px}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:9px;margin-bottom:20px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);opacity:.6}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.3rem,7vw,4.4rem);line-height:1;letter-spacing:-.025em;margin-bottom:22px;text-wrap:balance}
+h1 em{font-style:italic;font-weight:500;color:var(--gold)}
+.lead{font-size:clamp(1.05rem,2vw,1.22rem);color:var(--muted);max-width:56ch}
+.lead a,.prose a,.faq a,.note a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--accent)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.55rem,3.4vw,2.2rem);letter-spacing:-.02em;line-height:1.15;margin:54px 0 16px;text-wrap:balance}
+h3{font-family:var(--serif);font-weight:600;font-size:1.15rem;margin:0 0 6px}
+.prose p{color:var(--muted);max-width:66ch;margin-bottom:14px}
+.prose p b,.prose li b{color:var(--ink);font-weight:600}
+.prose ul{color:var(--muted);max-width:66ch;margin:0 0 14px 20px}
+.prose li{margin-bottom:8px}
+
+/* generator */
+.gen{position:relative;background:linear-gradient(180deg,var(--surface),var(--bg-2));border:1px solid var(--border);border-radius:22px;padding:24px;margin-top:22px;overflow:hidden}
+.gen::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,transparent,var(--game),transparent);opacity:.85}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--muted);background:transparent;border:1px solid var(--border);border-radius:999px;padding:9px 16px;cursor:pointer;min-height:44px}
+.tab[aria-selected="true"]{color:var(--bg);background:var(--ink);border-color:var(--ink)}
+.gen-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.gen-game{font-family:var(--serif);font-weight:600;font-size:1.5rem}
+.gen-rule{font-family:var(--mono);font-size:.76rem;color:var(--muted)}
+.lines{min-height:62px;margin:14px 0 6px}
+.line{display:flex;align-items:center;gap:10px;padding:10px 0;flex-wrap:wrap}
+.line+.line{border-top:1px dashed var(--border)}
+.balls{display:flex;gap:7px;flex-wrap:wrap}
+.ball{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:1rem;font-variant-numeric:tabular-nums;background:radial-gradient(circle at 35% 28%,#fff,var(--ball) 70%);color:var(--ball-ink);box-shadow:inset 0 -3px 6px rgba(0,0,0,.18),0 2px 5px rgba(0,0,0,.35);animation:pop .45s cubic-bezier(.2,.9,.3,1.3) both}
+.ball.special{color:#fff;background:radial-gradient(circle at 35% 28%,color-mix(in srgb,var(--game) 55%,#fff),var(--game) 75%);box-shadow:inset 0 -3px 6px rgba(0,0,0,.25),0 0 12px color-mix(in srgb,var(--game) 40%,transparent)}
+.ball.blank{background:transparent;border:1px dashed var(--border);box-shadow:none;color:var(--faint);animation:none}
+@keyframes pop{from{transform:scale(.2);opacity:0}to{transform:scale(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.ball{animation:none}html{scroll-behavior:auto}}
+@media(max-width:430px){.gen{padding:20px 16px}.ball{width:36px;height:36px;font-size:.9rem}.balls{gap:5px}}
+.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px}
+.go{font-family:var(--sans);font-weight:700;font-size:1.02rem;padding:14px 30px;border-radius:999px;border:0;cursor:pointer;background:var(--gold);color:#241a00;box-shadow:0 6px 20px var(--gold-glow);min-height:48px}
+.go:hover{transform:translateY(-1px)}
+.go:focus-visible,.tab:focus-visible,.ghost:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.ghost{font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--ink);background:transparent;border:1px solid var(--border);border-radius:999px;padding:11px 18px;cursor:pointer;min-height:44px}
+.count{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;color:var(--muted)}
+.count select{font:inherit;color:var(--ink);background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:9px 10px;min-height:44px}
+.note{font-family:var(--mono);font-size:.74rem;color:var(--faint);margin-top:16px;padding-top:14px;border-top:1px dashed var(--border);line-height:1.6}
+.note b{color:var(--muted);font-weight:500}
+
+/* app strip */
+.app{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:18px;padding:20px 22px;border:1px solid var(--border);border-radius:18px;background:var(--surface)}
+.app p{color:var(--muted);font-size:.95rem;max-width:46ch}
+.app p b{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.98rem;padding:13px 24px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;white-space:nowrap}
+.btn:hover{box-shadow:0 10px 30px var(--accent-glow)}
+
+/* facts + cards + table */
+.facts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:18px 0}
+.fact{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.fact .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.fact .v{font-family:var(--mono);font-size:1.02rem;color:var(--ink);font-variant-numeric:tabular-nums}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:18px}
+.card{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--game);opacity:.8}
+.card:hover{border-color:var(--faint)}
+.card p{color:var(--muted);font-size:.9rem}
+.card .mono{font-family:var(--mono);font-size:.74rem;color:var(--faint);margin-top:10px}
+.tbl{overflow-x:auto;margin-top:16px;border:1px solid var(--border);border-radius:16px}
+table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:520px}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:500;background:var(--bg-2)}
+td{color:var(--muted)}
+td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
+.steps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:18px}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px}
+.step .n{font-family:var(--mono);font-size:.7rem;color:var(--accent);letter-spacing:.15em;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.92rem}
+.answer{margin-top:22px;padding:22px 24px;border:1px solid color-mix(in srgb,var(--gold) 45%,var(--border));border-radius:18px;background:color-mix(in srgb,var(--gold) 6%,var(--surface))}
+.answer p{color:var(--ink);font-size:1.08rem;max-width:62ch}
+
+/* faq + final + footer */
+.faq details{border-top:1px solid var(--border);padding:16px 0}
+.faq details:last-child{border-bottom:1px solid var(--border)}
+.faq summary{cursor:pointer;font-weight:600;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--accent)}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{color:var(--muted);max-width:66ch;margin-top:10px}
+.final{text-align:center;margin:64px 0 36px;padding:48px 24px;border:1px solid var(--border);border-radius:24px;background:radial-gradient(120% 120% at 50% 0%,rgba(139,123,255,.12),transparent 60%),var(--bg-2)}
+.final h2{font-weight:900;font-size:clamp(1.8rem,4.5vw,2.8rem);margin:0 0 12px}
+.final p{color:var(--muted);max-width:46ch;margin:0 auto 24px}
+footer{border-top:1px solid var(--border);margin-top:30px;padding:30px 0 56px;color:var(--faint);font-size:.8rem}
+footer .disc{max-width:70ch;margin-bottom:12px;line-height:1.6}
+footer a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PowerPlayAI","operatingSystem":"iOS","applicationCategory":"UtilitiesApplication","description":"AI-powered lottery number generator for Powerball, Mega Millions and EuroMillions that saves every line and checks it against the real draw.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://apps.apple.com/app/id6737205069"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many numbers do I pick for Powerball?","acceptedAnswer":{"@type":"Answer","text":"Five main numbers from 1 to 69 and one Powerball from 1 to 26. The generator on this page follows those rules and never repeats a number within a line."}},{"@type":"Question","name":"When is Powerball drawn?","acceptedAnswer":{"@type":"Answer","text":"Powerball is drawn every Monday, Wednesday and Saturday. The PowerPlayAI app shows a countdown to the next draw and can remind you on draw night without giving away the result."}},{"@type":"Question","name":"Does a number generator change my chances in Powerball?","acceptedAnswer":{"@type":"Answer","text":"No. There are 292,201,338 possible Powerball lines and each is equally likely in every drawing. A generator, an AI model and your own favourite numbers all have the same chance."}},{"@type":"Question","name":"Can I check my Powerball ticket?","acceptedAnswer":{"@type":"Answer","text":"Yes, in the app: point the camera at the ticket or type the numbers in, and it compares each line with the draw."}},{"@type":"Question","name":"Is this the official lottery site?","acceptedAnswer":{"@type":"Answer","text":"No. PowerPlayAI is an independent app and this page is not affiliated with Powerball or any lottery operator. Tickets are bought from official retailers."}}]}</script>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="/powerplayai.html"><span class="dot"></span> PowerPlayAI</a>
+    <div class="nav-links">
+      <a class="plain" href="/ai-lottery-number-generator/">Generator</a>
+      <a class="plain" href="/powerplayai-picks/">Published picks</a>
+      <a class="nav-cta" href="https://apps.apple.com/app/id6737205069?ct=webgenpb">Get the app</a>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="eyebrow">Powerball · drawn Monday, Wednesday and Saturday</div>
+    <h1>Powerball number <em>generator</em></h1>
+    <p class="lead">Five numbers from 1 to 69 and one Powerball from 1 to 26. Tap Generate for a random line, or get AI-powered Powerball picks in the PowerPlayAI app.</p>
+  </header>
+  <main>
+
+
+<div class="gen" data-gen="powerball" style="--game:#e4342b">
+  
+  <div class="gen-head"><span class="gen-game">Powerball</span><span class="gen-rule"></span></div>
+  <div class="lines" aria-live="polite"></div>
+  <div class="controls">
+    <button class="go" type="button">Generate numbers</button>
+    <label class="count">Lines <select aria-label="How many lines"><option>1</option><option>3</option><option>5</option></select></label>
+    <button class="ghost" type="button" data-copy hidden>Copy</button>
+  </div>
+  <noscript><p class="note">This generator needs JavaScript. The app works without a browser.</p></noscript>
+  <p class="note"><b>What this is:</b> a plain random line, like a quick pick, made in your browser with its built-in secure random source. Nothing is sent anywhere or saved. The AI-powered engines run in the app. Generating numbers does not buy a ticket.</p>
+</div>
+<div class="app"><p><b>Playing Powerball this week?</b> Make your line in PowerPlayAI and it is saved for the draw, checked for you, and waiting sealed until you want to look.</p><a class="btn" href="https://apps.apple.com/app/id6737205069?ct=webgenpb">Download PowerPlayAI, free</a></div>
+<h2>How Powerball works</h2>
+<div class="facts">
+  <div class="fact"><div class="k">Main numbers</div><div class="v">5 of 1–69</div></div>
+  <div class="fact"><div class="k">Powerball</div><div class="v">1 of 1–26</div></div>
+  <div class="fact"><div class="k">Draw days</div><div class="v">Monday · Wednesday · Saturday</div></div>
+  <div class="fact"><div class="k">Possible lines</div><div class="v">292,201,338</div></div>
+</div>
+<div class="prose">
+<p>Powerball is played in the United States. A line is five different main numbers and one Powerball. That makes 292,201,338 possible lines, so any one line has a 1 in 292,201,338 chance of matching every number, however it was chosen.</p>
+</div>
+<h2>What the app adds for Powerball</h2>
+<div class="prose">
+<p><b>Four engines.</b> Base learns from Powerball draw history. Random Balanced spreads a clean quick pick across the range. Neuron and Quantum come with the Enhanced subscription. All of them run on your phone.</p>
+
+<p><b>Ticket packs.</b> The app can make a set of lines that repeats as few numbers as possible. Its Full Pack puts all 69 Powerball main numbers across 14 lines, with one unavoidable repeat. Coverage is arithmetic, not a prediction.</p>
+<p><b>Published picks.</b> Our own Powerball picks go up on the <a href="/powerplayai-picks/">published picks page</a> before every draw and are scored there afterwards.</p>
+<p><b>A sealed result.</b> After the draw, your result waits until you are ready, then opens ball by ball. You can turn the ceremony off and just see the numbers.</p>
+</div>
+
+<h2>What "AI" means here, and what it does not</h2>
+<div class="prose">
+<p>The engines in the app read past draws on your phone and shape a line from them. That changes <b>which numbers you get</b>. It does not change the odds. Every drawing is random and independent, and every possible line is exactly as likely as every other, whoever or whatever chose it.</p>
+<p>So we do not ask you to take the picks on faith. Our house picks for Powerball and Mega Millions are <a href="/powerplayai-picks/">published before each draw and scored after it</a>, and the <a href="/powerplayai-dashboard/">community results</a> show how lines made in the app have done, on good nights and bad ones.</p>
+</div>
+<h2>Questions people ask</h2><div class="faq"><details><summary>How many numbers do I pick for Powerball?</summary><p>Five main numbers from 1 to 69 and one Powerball from 1 to 26. The generator on this page follows those rules and never repeats a number within a line.</p></details><details><summary>When is Powerball drawn?</summary><p>Powerball is drawn every Monday, Wednesday and Saturday. The PowerPlayAI app shows a countdown to the next draw and can remind you on draw night without giving away the result.</p></details><details><summary>Does a number generator change my chances in Powerball?</summary><p>No. There are 292,201,338 possible Powerball lines and each is equally likely in every drawing. A generator, an AI model and your own favourite numbers all have the same chance.</p></details><details><summary>Can I check my Powerball ticket?</summary><p>Yes, in the app: point the camera at the ticket or type the numbers in, and it compares each line with the draw.</p></details><details><summary>Is this the official lottery site?</summary><p>No. PowerPlayAI is an independent app and this page is not affiliated with Powerball or any lottery operator. Tickets are bought from official retailers.</p></details></div>
+<div class="prose" style="margin-top:28px"><p>More generators: <a href="/ai-lottery-number-generator/">all games</a> · <a href="/mega-millions-number-generator/">Mega Millions number generator</a> · <a href="/euromillions-number-generator/">EuroMillions number generator</a></p></div>
+  <div class="final">
+    <h2>Keep every line. See how it did.</h2>
+    <p>PowerPlayAI makes your numbers, saves them for the draw, and shows you the result when you are ready to look. Free to download on iPhone.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6737205069?ct=webgenpb">Download PowerPlayAI, free</a>
+  </div>
+  </main>
+  <footer>
+    <p class="disc">Not affiliated with MUSL, Powerball, Mega Millions, or EuroMillions. For entertainment. You must be of legal age to play the lottery in your jurisdiction. Lottery draws are random. No app or model changes the odds of any drawing, and generating numbers does not buy a ticket.</p>
+    <p>© SquatchCraft LLC · <a href="/ai-lottery-number-generator/">Number generator</a> · <a href="/powerball-number-generator/">Powerball</a> · <a href="/mega-millions-number-generator/">Mega Millions</a> · <a href="/euromillions-number-generator/">EuroMillions</a> · <a href="/can-ai-predict-lottery-numbers/">Can AI predict the lottery?</a> · <a href="/powerplayai-picks/">Published picks</a> · <a href="/powerplayai-dashboard/">Community results</a> · <a href="/powerplayai-privacy.html">Privacy</a></p>
+  </footer>
+</div>
+<script>
+(function(){
+  var GAMES = {"powerball":{"name":"Powerball","slug":"powerball-number-generator","color":"#e4342b","main":5,"mainMax":69,"special":1,"specialMax":26,"specialName":"Powerball","specialPlural":"Powerball","days":"Monday, Wednesday and Saturday","where":"the United States"},"megamillions":{"name":"Mega Millions","slug":"mega-millions-number-generator","color":"#f5b301","main":5,"mainMax":70,"special":1,"specialMax":24,"specialName":"Mega Ball","specialPlural":"Mega Ball","days":"Tuesday and Friday","where":"the United States"},"euromillions":{"name":"EuroMillions","slug":"euromillions-number-generator","color":"#3d7bff","main":5,"mainMax":50,"special":2,"specialMax":12,"specialName":"Lucky Star","specialPlural":"Lucky Stars","days":"Tuesday and Friday","where":"nine European countries, including the UK, Ireland, France, Spain and Portugal"}};
+  function rnd(max){var lim=Math.floor(4294967296/max)*max,b=new Uint32Array(1);do{crypto.getRandomValues(b)}while(b[0]>=lim);return 1+(b[0]%max)}
+  function draw(n,max){var s=[];while(s.length<n){var v=rnd(max);if(s.indexOf(v)<0)s.push(v)}return s.sort(function(a,b){return a-b})}
+  function pad(n){return n<10?'0'+n:''+n}
+  document.querySelectorAll('[data-gen]').forEach(function(root){
+    var key=root.getAttribute('data-gen'), last=[];
+    var linesEl=root.querySelector('.lines'), countEl=root.querySelector('select'), copyEl=root.querySelector('[data-copy]');
+    function g(){return GAMES[key]}
+    function paint(rows){
+      linesEl.innerHTML='';
+      rows.forEach(function(r,i){
+        var line=document.createElement('div');line.className='line';
+        var balls=document.createElement('div');balls.className='balls';
+        r.main.concat(r.special).forEach(function(n,j){
+          var b=document.createElement('span');b.className='ball'+(j>=r.main.length?' special':'');
+          b.style.animationDelay=(i*0.08+j*0.04)+'s';b.textContent=n;balls.appendChild(b)});
+        line.setAttribute('aria-label',g().name+' line '+(i+1)+': '+r.main.join(', ')+' and '+g().specialName+' '+r.special.join(', '));
+        line.appendChild(balls);linesEl.appendChild(line)});
+    }
+    function blank(){
+      var line=document.createElement('div');line.className='line';var balls=document.createElement('div');balls.className='balls';
+      for(var j=0;j<g().main+g().special;j++){var b=document.createElement('span');b.className='ball blank';b.textContent='?';balls.appendChild(b)}
+      line.appendChild(balls);linesEl.innerHTML='';linesEl.appendChild(line);
+    }
+    function head(){
+      root.style.setProperty('--game',g().color);
+      var nm=root.querySelector('.gen-game'),rl=root.querySelector('.gen-rule');
+      if(nm)nm.textContent=g().name;
+      if(rl)rl.textContent=g().main+' of 1\u2013'+g().mainMax+' + '+g().special+' '+(g().special>1?g().specialPlural:g().specialName)+' of 1\u2013'+g().specialMax;
+    }
+    root.querySelector('.go').addEventListener('click',function(){
+      var n=parseInt(countEl.value,10)||1;last=[];
+      for(var i=0;i<n;i++)last.push({main:draw(g().main,g().mainMax),special:draw(g().special,g().specialMax)});
+      paint(last);if(copyEl)copyEl.hidden=false;
+    });
+    if(copyEl)copyEl.addEventListener('click',function(){
+      var text=last.map(function(r){return g().name+': '+r.main.map(pad).join(' ')+' + '+r.special.map(pad).join(' ')}).join('\n');
+      if(navigator.clipboard)navigator.clipboard.writeText(text).then(function(){copyEl.textContent='Copied';setTimeout(function(){copyEl.textContent='Copy'},1400)});
+    });
+    root.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){
+      key=t.getAttribute('data-game');last=[];if(copyEl)copyEl.hidden=true;
+      root.querySelectorAll('.tab').forEach(function(o){o.setAttribute('aria-selected',o===t?'true':'false')});
+      head();blank();
+    })});
+    head();blank();
+  });
+})();
+</script>
+</body>
+</html>

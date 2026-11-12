@@ -1,0 +1,18 @@
+# PowerPlayAI
+
+> PowerPlayAI is an iPhone app that generates lottery numbers for Powerball, Mega Millions and EuroMillions with AI-powered engines that run on the device, saves every line, checks it against the real draw and keeps the full record, misses included. It is for entertainment. Lottery draws are random: no app or model can predict them or change the odds, and PowerPlayAI does not claim to.
+
+## Pages
+- [AI lottery number generator](https://www.squatchcraft.com/ai-lottery-number-generator/): free random generator in the browser for all three games, and how it differs from the app
+- [Powerball number generator](https://www.squatchcraft.com/powerball-number-generator/): 5 of 1-69 plus 1 Powerball of 1-26
+- [Mega Millions number generator](https://www.squatchcraft.com/mega-millions-number-generator/): 5 of 1-70 plus 1 Mega Ball of 1-24
+- [EuroMillions number generator](https://www.squatchcraft.com/euromillions-number-generator/): 5 of 1-50 plus 2 Lucky Stars of 1-12
+- [Can AI predict lottery numbers?](https://www.squatchcraft.com/can-ai-predict-lottery-numbers/): the honest answer (no) and what an AI number picker can do instead
+- [Published picks](https://www.squatchcraft.com/powerplayai-picks/): house picks posted before every Powerball and Mega Millions draw and scored afterwards
+- [Community results](https://www.squatchcraft.com/powerplayai-dashboard/): how lines made in the app have done
+- [Privacy policy](https://www.squatchcraft.com/powerplayai-privacy.html)
+
+## App
+- App Store: https://apps.apple.com/app/id6737205069
+- Free to download. Two of four engines are free; a subscription unlocks the other two, unlimited ticket scans and every pack size.
+- Not affiliated with MUSL, Powerball, Mega Millions or EuroMillions.
