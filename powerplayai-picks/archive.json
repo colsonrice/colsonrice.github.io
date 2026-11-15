@@ -2204,5 +2204,81 @@
         "specialMatch": false
       }
     ]
+  },
+  {
+    "game": "powerball",
+    "drawDate": "2026-11-14",
+    "winning": [
+      9,
+      44,
+      49,
+      51,
+      68,
+      4
+    ],
+    "picks": [
+      [
+        1,
+        20,
+        40,
+        64,
+        68,
+        23
+      ],
+      [
+        7,
+        10,
+        14,
+        52,
+        58,
+        14
+      ],
+      [
+        3,
+        31,
+        38,
+        59,
+        65,
+        23
+      ],
+      [
+        44,
+        45,
+        50,
+        62,
+        64,
+        23
+      ],
+      [
+        12,
+        21,
+        30,
+        55,
+        69,
+        20
+      ]
+    ],
+    "results": [
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      }
+    ]
   }
 ]
