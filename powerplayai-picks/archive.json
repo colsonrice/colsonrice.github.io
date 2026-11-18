@@ -2356,5 +2356,81 @@
         "specialMatch": false
       }
     ]
+  },
+  {
+    "game": "megaMillions",
+    "drawDate": "2026-11-17",
+    "winning": [
+      3,
+      10,
+      19,
+      28,
+      33,
+      21
+    ],
+    "picks": [
+      [
+        19,
+        22,
+        39,
+        57,
+        61,
+        18
+      ],
+      [
+        11,
+        26,
+        46,
+        54,
+        62,
+        24
+      ],
+      [
+        9,
+        24,
+        37,
+        58,
+        63,
+        3
+      ],
+      [
+        38,
+        39,
+        48,
+        51,
+        54,
+        13
+      ],
+      [
+        8,
+        16,
+        23,
+        39,
+        40,
+        13
+      ]
+    ],
+    "results": [
+      {
+        "mainMatches": 1,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      },
+      {
+        "mainMatches": 0,
+        "specialMatch": false
+      }
+    ]
   }
 ]
